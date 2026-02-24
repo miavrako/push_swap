@@ -1,8 +1,10 @@
-# Simple Algorithm
+# Simple Algorithm MIAVARAKO
 	Simple min/max extraction methods
 
-# Medium Algorithm
+# Medium Algorithm MIAVRAKO
 	Chunk_based sorting (divide into √n chunks)
 
-# Complex algorithm
+# Complex algorithm MIRANTO
 	Radix sort adaptation (LSD or MSD)
+
+# Adaptive MIRANTO
