@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 07:29:40 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/05 08:02:41 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/05 15:23:54 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ int	is_sorted(t_stack *stack)
 
 int	find_min_index(t_stack *stack)
 {
-	int		min;
-	int		idx;
-	int		pos;
+	int	min;
+	int	idx;
+	int	pos;
 
 	if (!stack)
 		return (-1);
