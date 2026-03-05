@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:46:11 by mirarand          #+#    #+#             */
-/*   Updated: 2026/02/24 15:13:36 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/05 08:09:46 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_swap(t_stack **stack)
 		return ;
 	first = *stack;
 	second = (*stack)->next;
-	first->next = second->next;
+	first ->next = second->next;
 	second->next = first;
 	*stack = second;
 }

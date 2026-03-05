@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rrotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:46:07 by mirarand          #+#    #+#             */
-/*   Updated: 2026/02/24 15:13:57 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/05 08:09:06 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

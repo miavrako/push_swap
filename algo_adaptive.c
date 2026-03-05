@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   algo_adaptive.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 14:45:56 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/05 08:07:02 by mirarand         ###   ########.fr       */
+/*   Created: 2026/03/05 14:00:30 by mirarand          #+#    #+#             */
+/*   Updated: 2026/03/05 14:24:59 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_push(t_stack **src, t_stack **dest)
+void	algo_adaptive(t_stack **a, t_stack **b)
 {
-	t_stack	*tmp;
+	long	total;
+	long	mistakes;
+	int		size;
 
-	if (!src || !*src)
+	size = stack_size(*a);
+	if (size <= 1)
 		return ;
-	tmp = *src;
-	*src = (*src)->next;
-	tmp->next = *dest;
-	*dest = tmp;
-}
-
-void	pa(t_stack **stack_a, t_stack **stack_b)
-{
-	ft_push(stack_b, stack_a);
-	ft_putstr_fd("pa\n", 1);
-}
-
-void	pb(t_stack **stack_a, t_stack **stack_b)
-{
-	ft_push(stack_a, stack_b);
-	ft_putstr_fd("pb\n", 1);
+	if (size == 2)
+		return (sort_two(a, b));
+	if (size == 3)
+		return (sort_three(a, b));
+	if (size <= 5)
+		return (sort_five(a, b));
+	mistakes = disorder_metric(*a, size, &total);
+	if (mistakes * 5 < total)
+		algo_simple(a, b);
+	else if (mistakes * 2 < total)
+		algo_medium(a, b);
+	else
+		algo_complex(a, b);
 }

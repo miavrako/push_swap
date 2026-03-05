@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 22:27:43 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/05 14:28:24 by miavrako         ###   ########.fr       */
+/*   Created: 2026/02/24 13:58:15 by mirarand          #+#    #+#             */
+/*   Updated: 2026/03/05 08:10:11 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	while (lst)
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
 	{
-		count++;
-		lst = lst->next;
+		write(fd, &s[i], 1);
+		i++;
 	}
-	return (count);
 }
