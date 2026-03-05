@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:46:03 by mirarand          #+#    #+#             */
-/*   Updated: 2026/02/24 14:46:04 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/05 10:12:13 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_rotate(t_stack **stack)
+static void	ft_rotate(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*last;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	first = *stack;
 	last = ft_lstlast(*stack);
 	*stack = first->next;
@@ -26,19 +26,19 @@ static void ft_rotate(t_stack **stack)
 	last->next = first;
 }
 
-void ra(t_stack **stack_a)
+void	ra(t_stack **stack_a)
 {
 	ft_rotate(stack_a);
 	ft_putstr_fd("ra\n", 1);
 }
 
-void rb(t_stack **stack_b)
+void	rb(t_stack **stack_b)
 {
 	ft_rotate(stack_b);
 	ft_putstr_fd("rb\n", 1);
 }
 
-void rr(t_stack **stack_a, t_stack **stack_b)
+void	rr(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_rotate(stack_a);
 	ft_rotate(stack_b);

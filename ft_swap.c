@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:46:11 by mirarand          #+#    #+#             */
-/*   Updated: 2026/02/24 14:46:15 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/02/24 15:13:36 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,27 @@ static void	ft_swap(t_stack **stack)
 	t_stack	*second;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	first = *stack;
 	second = (*stack)->next;
-	first ->next = second->next;
+	first->next = second->next;
 	second->next = first;
 	*stack = second;
 }
 
-void sa(t_stack **stack_a)
+void	sa(t_stack **stack_a)
 {
 	ft_swap(stack_a);
 	ft_putstr_fd("sa\n", 1);
 }
 
-void sb(t_stack **stack_b)
+void	sb(t_stack **stack_b)
 {
 	ft_swap(stack_b);
 	ft_putstr_fd("sb\n", 1);
 }
 
-void ss(t_stack **stack_a, t_stack **stack_b)
+void	ss(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_swap(stack_a);
 	ft_swap(stack_b);

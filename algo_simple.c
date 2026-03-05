@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   algo_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 14:45:56 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/05 10:12:08 by miavrako         ###   ########.fr       */
+/*   Created: 2026/03/05 10:25:26 by miavrako          #+#    #+#             */
+/*   Updated: 2026/03/05 15:12:24 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_push(t_stack **src, t_stack **dest)
+void	algo_simple(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*tmp;
+	t_stack	*max;
+	int		pos;
 
-	if (!src || !*src)
-		return ;
-	tmp = *src;
-	*src = (*src)->next;
-	tmp->next = *dest;
-	*dest = tmp;
-}
-
-void	pa(t_stack **stack_a, t_stack **stack_b)
-{
-	ft_push(stack_b, stack_a);
-	ft_putstr_fd("pa\n", 1);
-}
-
-void	pb(t_stack **stack_a, t_stack **stack_b)
-{
-	ft_push(stack_a, stack_b);
-	ft_putstr_fd("pb\n", 1);
+	pos = ft_lstsize(stack_a) / 2;
+	while (ft_lstsize(*stack_a) <= 2)
+	{
+		if (max > stack_a)
+		{
+			if (max->index <= pos)
+			{
+				ra(stack_a);
+				pb(stack_a, stack_b);
+			}
+			else
+			{
+				rra(stack_a);
+				pb(stack_a, stack_b);
+			}
+		}
+	}
+	sort_two();
+	while (*stack_b)
+		pa(stack_b, stack_a);
 }

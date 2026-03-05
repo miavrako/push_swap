@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 14:45:56 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/05 10:12:08 by miavrako         ###   ########.fr       */
+/*   Created: 2026/02/09 22:28:18 by miavrako          #+#    #+#             */
+/*   Updated: 2026/03/05 14:28:37 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_push(t_stack **src, t_stack **dest)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_stack	*tmp;
-
-	if (!src || !*src)
-		return ;
-	tmp = *src;
-	*src = (*src)->next;
-	tmp->next = *dest;
-	*dest = tmp;
-}
-
-void	pa(t_stack **stack_a, t_stack **stack_b)
-{
-	ft_push(stack_b, stack_a);
-	ft_putstr_fd("pa\n", 1);
-}
-
-void	pb(t_stack **stack_a, t_stack **stack_b)
-{
-	ft_push(stack_a, stack_b);
-	ft_putstr_fd("pb\n", 1);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
