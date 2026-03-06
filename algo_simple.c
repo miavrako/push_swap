@@ -17,8 +17,8 @@ void	algo_simple(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*max;
 	int		pos;
 
-	pos = ft_lstsize(stack_a) / 2;
-	while (ft_lstsize(*stack_a) <= 2)
+	pos = stack_size(*stack_a) / 2;
+	while (stack_size(*stack_a) > 2)
 	{
 		if (max > stack_a)
 		{
