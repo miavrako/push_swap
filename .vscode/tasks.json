@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build push_swap",
+			"type": "shell",
+			"command": "cd /home/mirarand/Documents/push_swap_github && make re",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+		{
+			"label": "build push_swap",
+			"type": "shell",
+			"command": "cd /home/mirarand/Documents/push_swap_github && make re",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+		{
+			"label": "test push_swap",
+			"type": "shell",
+			"command": "cd /home/mirarand/Documents/push_swap_github && echo '--- 2 elem ---' && ./push_swap 2 1 && echo '--- 3 elem ---' && ./push_swap 3 2 1 && echo '--- 5 elem ---' && ./push_swap 5 3 1 4 2 && echo '--- 10 elem ---' && ./push_swap 9 3 7 1 5 8 2 10 4 6"
+		},
+		{
+			"label": "test2 push_swap",
+			"type": "shell",
+			"command": "cd /home/mirarand/Documents/push_swap_github && echo '=== 2 ===' && ./push_swap 2 1 && echo '=== 3 ===' && ./push_swap 3 2 1 && echo '=== 5 ===' && ./push_swap 5 3 1 4 2 && echo '=== 10 ===' && ./push_swap 9 3 7 1 5 8 2 10 4 6 | wc -l"
+		}
+	]
+}

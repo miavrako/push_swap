@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/06 07:56:21 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/06 08:20:12 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void		sort_five(t_stack **a, t_stack **b);
 void		algo_complex(t_stack **a, t_stack **b);
 void		ft_putstr_fd(char *s, int fd);
 long		disorder_metric(t_stack *stack, int size, long *total_out);
+void		algo_simple(t_stack **a, t_stack **b);
+void		algo_medium(t_stack **a, t_stack **b);
 void		algo_adaptive(t_stack **a, t_stack **b);
 
 #endif
