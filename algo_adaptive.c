@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_adaptive.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 14:00:30 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/09 21:15:03 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/09 22:18:26 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	algo_adaptive(t_stack **a, t_stack **b)
 	mistakes = disorder_metric(*a, size, &total);
 	if (mistakes * 5 < total)
 		algo_simple(a, b);
-	// else if (mistakes * 2 < total)
-	// 	algo_medium(a, b);
+	else if (mistakes * 2 < total)
+		algo_medium(a, b);
 	else
 		algo_complex(a, b);
 }
