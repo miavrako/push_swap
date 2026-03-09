@@ -6,43 +6,70 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 10:25:26 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/05 15:24:21 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/09 16:58:05 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	algo_simple(t_stack **stack_a, t_stack **stack_b)
+int	val_min (t_stack *stack)
 {
-	(void)stack_a;
-	(void)stack_b;
-	// t_stack	*max;
-	// int		pos;
-	// pos = stack_size(*stack_a) / 2;
-	// while (stack_size(*stack_a) > 2)
-	// {
-	// 	if (max > stack_a)              // TODO: max non init, types incompatibles
-	// 	{
-	// 		if (max->index <= pos)
-	// 		{
-	// 			ra(stack_a);
-	// 			pb(stack_a, stack_b);
-	// 		}
-	// 		else
-	// 		{
-	// 			rra(stack_a);
-	// 			pb(stack_a, stack_b);
-	// 		}
-	// 	}
-	// }
-	// sort_two(stack_a, stack_b);
-	// while (*stack_b)
-	// 	pa(stack_a, stack_b);
+	int	min_value;
+	int	min_pos;
+	int pos;
+
+	if (!stack)
+		return (-1);
+	min_value = stack->content;
+	min_pos = 0;
+	pos = 0;
+	while (stack)
+	{
+		if (stack->content < min_value)
+		{
+			min_value = stack->content;
+			min_pos = pos;
+		}
+		stack = stack->next;
+		pos++;
+	}
+	return (min_pos);
 }
 
-void	algo_medium(t_stack **stack_a, t_stack **stack_b)
+void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 {
-	(void)stack_a;
-	(void)stack_b;
-	// TODO: a implementer
+	int	pos;
+	int	size;
+
+	pos = val_min(*stack_a);
+	size = stack_size(*stack_a);
+
+	if (pos <= size / 2)
+	{
+		while (pos-- > 0)
+			ra(stack_a);
+	}
+	else
+	{
+		pos = size - pos;
+		while (pos-- > 0)
+			rra(stack_a);
+	}
+	pb(stack_a, stack_b);
+}
+
+
+void	algo_simple(t_stack **stack_a, t_stack **stack_b)
+{
+	int size;
+
+	size = stack_size(*stack_a);
+	while (size > 3)
+	{
+		push_to_b(stack_a, stack_b);
+		size--;
+	}
+	sort_three(stack_a, stack_b);
+	while (*stack_b)
+		pa(stack_a, stack_b);
 }
