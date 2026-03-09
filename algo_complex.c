@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_complex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 07:29:40 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/05 14:26:53 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/09 22:55:05 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	algo_complex(t_stack **a, t_stack **b)
 	int	bits;
 	int	bit;
 
-	if (!*a || !(*a)->next)
+	if (!*a || !(*a)->next || is_sorted(*a))
 		return ;
 	if (!(*a)->next->next)
 		return (sort_two(a, b));

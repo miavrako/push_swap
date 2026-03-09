@@ -6,18 +6,16 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:38:32 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/09 22:15:55 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/09 22:55:47 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	chunks_to_b(t_stack **stack_a, t_stack **stack_b, int chunk_size)
+static void	chunks_to_b(t_stack **stack_a, t_stack **stack_b, int chunk_size)
 {
-	int size;
 	int count;
 
-	size = stack_size(*stack_a);
 	count = 0;
 	while (*stack_a)
 	{
@@ -37,7 +35,7 @@ void	chunks_to_b(t_stack **stack_a, t_stack **stack_b, int chunk_size)
 		}
 }
 
-int	val_max (t_stack *stack)
+static int	val_max (t_stack *stack)
 {
 	int	max_value;
 	int	max_pos;
@@ -61,7 +59,7 @@ int	val_max (t_stack *stack)
 	return (max_pos);
 }
 
-void	push_to_a(t_stack **stack_a, t_stack **stack_b)
+static void	push_to_a(t_stack **stack_a, t_stack **stack_b)
 {
 	int max_index;
 	int size;
@@ -90,6 +88,8 @@ void	algo_medium(t_stack **stack_a, t_stack **stack_b)
 	int	chunk_size;
 
 	size = stack_size(*stack_a);
+	if (!stack_a || !*stack_a || is_sorted(*stack_a))
+		return ;
 	if (size <= 100)
 		chunk_size = 15;
 	else

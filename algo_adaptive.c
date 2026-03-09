@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 14:00:30 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/09 22:18:26 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/09 22:54:42 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	algo_adaptive(t_stack **a, t_stack **b)
 	long	mistakes;
 	int		size;
 
+	if (!a || !*a || is_sorted(*a))
+		return ;
 	size = stack_size(*a);
 	if (size <= 1)
 		return ;
