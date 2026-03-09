@@ -6,9 +6,11 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 19:09:39 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/09 19:14:21 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/09 21:17:24 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 static int	ft_strcmp(const char *s1, const char *s2)
 {
@@ -24,8 +26,8 @@ void	algo_flag(t_stack **a, t_stack **b, char *flag)
 {
 	if (ft_strcmp(flag, "--simple") == 0)
 		algo_simple(a, b);
-	else if (ft_strcmp(flag, "--medium") == 0)
-		algo_medium(a, b);
+	// else if (ft_strcmp(flag, "--medium") == 0)
+	// 	algo_medium(a, b);
 	else if (ft_strcmp(flag, "--complex") == 0)
 		algo_complex(a, b);
 	else

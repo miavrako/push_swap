@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/09 16:58:31 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/09 21:13:23 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_stack
 }					t_stack;
 
 t_stack		*ft_lstlast(t_stack *lst);
-
 int			stack_size(t_stack *stack);
 int			find_min_index(t_stack *stack);
 void		assign_indices(t_stack *stack);
@@ -33,20 +32,20 @@ void		pb(t_stack **stack_a, t_stack **stack_b);
 void		ra(t_stack **stack_a);
 void		rra(t_stack **stack_a);
 void		sa(t_stack **stack_a);
-void		sb(t_stack **stack_b);
-void		ss(t_stack **stack_a, t_stack **stack_b);
 void		rb(t_stack **stack_b);
 void		rrb(t_stack **stack_b);
 void		rr(t_stack **stack_a, t_stack **stack_b);
 void		rrr(t_stack **stack_a, t_stack **stack_b);
+void		sb(t_stack **stack_b);
+void		ss(t_stack **stack_a, t_stack **stack_b);
 void		sort_two(t_stack **a, t_stack **b);
 void		sort_three(t_stack **a, t_stack **b);
 void		sort_five(t_stack **a, t_stack **b);
 void		algo_complex(t_stack **a, t_stack **b);
 void		ft_putstr_fd(char *s, int fd);
 long		disorder_metric(t_stack *stack, int size, long *total_out);
-void		algo_simple(t_stack **a, t_stack **b);
-void		algo_medium(t_stack **a, t_stack **b);
 void		algo_adaptive(t_stack **a, t_stack **b);
+void		algo_simple(t_stack **stack_a, t_stack **stack_b);
+void		algo_flag(t_stack **a, t_stack **b, char *flag);
 
 #endif
