@@ -12,7 +12,8 @@ SRC=push_swap.c \
 	ft_swap.c \
 	ft_utils.c \
 	stack_utils.c \
-	tiny_sort.c
+	tiny_sort.c\
+	push_swap_utils.c
 
 OBJ = $(SRC:.c=.o)
 

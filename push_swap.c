@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/09 19:10:57 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/09 19:24:50 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,6 @@ static long	ft_atol(const char *str)
 	}
 	return (res * sign);
 }
-
-
-
 
 int	main(int argc, char **argv)
 {
