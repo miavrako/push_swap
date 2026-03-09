@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/06 09:57:16 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/09 19:10:57 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,9 @@ static long	ft_atol(const char *str)
 	return (res * sign);
 }
 
+
+
+
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -88,12 +91,14 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	i = 1;
+	if (argv[1][0] == '-' && argv[1][1] == '-')
+		i = 2;
 	while (i < argc)
 	{
 		push_back(&a, (int)ft_atol(argv[i]));
 		i++;
 	}
-	algo_complex(&a, &b);
+	algo_flag(&a, &b, argv[1]);
 	free_stack(a);
 	free_stack(b);
 	return (0);
