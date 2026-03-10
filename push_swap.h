@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/10 14:59:09 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/10 15:15:07 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "ft_printf/ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -55,7 +56,7 @@ void				ft_rotate_hide(t_stack **stack);
 void				ft_rrotate_hide(t_stack **stack);
 int					read_and_apply(t_stack **a, t_stack **b);
 void				no_duplicates(t_stack **stack);
-long				ft_atoi_long(const char *str);
+long				no_long_num(const char *str);
 void				print_error(void);
 
 #endif

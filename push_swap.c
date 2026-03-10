@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/10 15:08:39 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/10 15:47:52 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ static long	ft_atol(const char *str)
 
 int	main(int argc, char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
-	int		i;
+	t_stack *a;
+	t_stack *b;
+	int i;
 
 	if (argc < 2)
 		return (0);

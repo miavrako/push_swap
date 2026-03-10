@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:38:32 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/10 13:48:08 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/10 15:20:23 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,14 @@
 static void	chunks_to_b(t_stack **stack_a, t_stack **stack_b, int chunk_size)
 {
 	int	count;
+	int	size;
 
 	count = 0;
+	size = stack_size(*stack_a);
+	if (size <= 100)
+		chunk_size = 15;
+	else
+		chunk_size = 30;
 	while (*stack_a)
 	{
 		if ((*stack_a)->index < count)
