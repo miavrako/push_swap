@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:49:33 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/09 23:30:19 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/10 12:50:34 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
