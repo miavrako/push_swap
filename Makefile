@@ -3,6 +3,7 @@ CHECKER = checker
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 
+
 SRC =	push_swap.c \
 		algo_adaptive.c \
 		algo_complex.c \
@@ -29,20 +30,22 @@ CHECKER_OBJ = $(CHECKER_SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-
+$(NAME): $(OBJ) make_printf
+	$(CC) $(FLAGS) $(OBJ) ./ft_printf/libftprintf.a -o $(NAME)
+make_printf :
+	make -C ft_printf
 bonus: $(CHECKER_OBJ)
 	$(CC) $(FLAGS) $(CHECKER_OBJ) -o $(CHECKER)
 
 %.o: %.c push_swap.h
 	$(CC) $(FLAGS) -c $< -o $@
 
-clean:
+clean :
 	rm -f $(OBJ) $(CHECKER_OBJ)
-
+	make -C ft_printf clean
 fclean: clean
 	rm -f $(NAME) $(CHECKER)
+	make -C ft_printf fclean
 
 re: fclean all
 
