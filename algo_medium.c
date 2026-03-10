@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:38:32 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/09 22:55:47 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/10 13:48:08 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	chunks_to_b(t_stack **stack_a, t_stack **stack_b, int chunk_size)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (*stack_a)
@@ -32,14 +32,14 @@ static void	chunks_to_b(t_stack **stack_a, t_stack **stack_b, int chunk_size)
 		}
 		else
 			ra(stack_a);
-		}
+	}
 }
 
-static int	val_max (t_stack *stack)
+static int	val_max(t_stack *stack)
 {
 	int	max_value;
 	int	max_pos;
-	int pos;
+	int	pos;
 
 	if (!stack)
 		return (-1);
@@ -61,8 +61,8 @@ static int	val_max (t_stack *stack)
 
 static void	push_to_a(t_stack **stack_a, t_stack **stack_b)
 {
-	int max_index;
-	int size;
+	int	max_index;
+	int	size;
 
 	while (*stack_b)
 	{

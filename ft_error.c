@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:27:03 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/09 22:58:48 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/10 13:45:45 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ long	ft_atoi_long(const char *str)
 	return (sign * res);
 }
 
-void	no_duplicates (t_stack **stack)
+void	no_duplicates(t_stack **stack)
 {
 	t_stack	*node;
 	t_stack	*other;

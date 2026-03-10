@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/10 12:57:49 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/10 13:36:22 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void				sort_three(t_stack **a, t_stack **b);
 void				sort_five(t_stack **a, t_stack **b);
 void				algo_complex(t_stack **a, t_stack **b);
 void				ft_putstr_fd(char *s, int fd);
-long				disorder_metric(t_stack *stack, int size, long total_out);
+long				disorder_metric(t_stack *stack, int size, long *total_out);
 void				algo_adaptive(t_stack **a, t_stack **b);
 void				algo_simple(t_stack **stack_a, t_stack **stack_b);
 void				algo_medium(t_stack **stack_a, t_stack **stack_b);

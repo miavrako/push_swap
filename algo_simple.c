@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   algo_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 10:25:26 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/09 22:55:57 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/10 13:47:23 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	val_min (t_stack *stack)
+static int	val_min(t_stack *stack)
 {
 	int	min_value;
 	int	min_pos;
-	int pos;
+	int	pos;
 
 	if (!stack)
 		return (-1);
@@ -43,7 +43,6 @@ static void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 
 	pos = val_min(*stack_a);
 	size = stack_size(*stack_a);
-
 	if (pos <= size / 2)
 	{
 		while (pos-- > 0)
@@ -58,10 +57,9 @@ static void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 	pb(stack_a, stack_b);
 }
 
-
 void	algo_simple(t_stack **stack_a, t_stack **stack_b)
 {
-	int size;
+	int	size;
 
 	size = stack_size(*stack_a);
 	if (!stack_a || !*stack_a || is_sorted(*stack_a))
