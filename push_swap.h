@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/10 13:36:22 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/10 14:59:09 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,8 @@ void				ft_push_hide(t_stack **src, t_stack **dest);
 void				ft_rotate_hide(t_stack **stack);
 void				ft_rrotate_hide(t_stack **stack);
 int					read_and_apply(t_stack **a, t_stack **b);
+void				no_duplicates(t_stack **stack);
+long				ft_atoi_long(const char *str);
+void				print_error(void);
 
 #endif
