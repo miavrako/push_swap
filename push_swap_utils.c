@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 19:09:39 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/10 22:13:41 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/11 12:01:50 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,4 @@ void	algo_flag(t_stack **a, t_stack **b, char *flag)
 		algo_complex(a, b);
 	else
 		algo_adaptive(a, b);
-}
-
-void	*ft_memset(void *s, int v, size_t n)
-{
-	unsigned char	*dest;
-	size_t			i;
-
-	dest = (unsigned char *) s;
-	i = 0;
-	while (i < n)
-	{
-		dest[i] = v;
-		i++;
-	}
-	return (s);
 }

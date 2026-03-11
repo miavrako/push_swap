@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:38:32 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/11 11:08:59 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/11 11:33:34 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@ void	push_max_to_a(t_stack **a, t_stack **b)
 
 	pos = find_min_index(*b);
 	size = stack_size(*b);
-
 	if (pos <= size / 2)
 		while (pos--)
 			rb(b);
 	else
 		while (pos++ < size)
 			rrb(b);
-
 	pa(a, b);
 }
 
@@ -44,6 +42,7 @@ void	algo_medium(t_stack **stack_a, t_stack **stack_b)
 	else
 		chunk = 30;
 	pushed = 0;
+	assign_indices(*stack_a);
 	while (*stack_a)
 	{
 		if ((*stack_a)->index <= pushed)
@@ -51,7 +50,7 @@ void	algo_medium(t_stack **stack_a, t_stack **stack_b)
 			pb(stack_a, stack_b);
 			rb(stack_b);
 			pushed++;
-	}
+		}
 		else if ((*stack_a)->index <= pushed + chunk)
 		{
 			pb(stack_a, stack_b);
