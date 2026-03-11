@@ -3,45 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:38:32 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/11 09:25:22 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/11 11:08:59 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	find_max_pos(t_stack *stack)
-{
-	int	max;
-	int	pos;
-	int	i;
-
-	if (!stack)
-		return (0);
-	max = stack->index;
-	pos = 0;
-	i = 0;
-	while (stack)
-	{
-		if (stack->index > max)
-		{
-			max = stack->index;
-			pos = i;
-		}
-		stack = stack->next;
-		i++;
-	}
-	return (pos);
-}
 
 void	push_max_to_a(t_stack **a, t_stack **b)
 {
 	int	pos;
 	int	size;
 
-	pos = find_max_pos(*b);
+	pos = find_min_index(*b);
 	size = stack_size(*b);
 
 	if (pos <= size / 2)
@@ -75,7 +51,7 @@ void	algo_medium(t_stack **stack_a, t_stack **stack_b)
 			pb(stack_a, stack_b);
 			rb(stack_b);
 			pushed++;
-		}
+	}
 		else if ((*stack_a)->index <= pushed + chunk)
 		{
 			pb(stack_a, stack_b);
