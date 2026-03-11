@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:27:03 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/10 15:15:08 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/10 22:17:04 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ long	no_long_num(const char *str)
 	return (sign * res);
 }
 
-void	no_duplicates(t_stack **stack)
+void	no_duplicate(t_stack **stack)
 {
 	t_stack	*node;
 	t_stack	*other;

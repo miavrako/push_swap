@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/10 15:15:07 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/10 22:17:14 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,18 @@ typedef struct s_stack
 	int				index;
 	struct s_stack	*next;
 }					t_stack;
+
+typedef struct s_bench
+{
+	int activated;
+	int total_operation;
+	int sa, sb, ss;
+	int pa, pb;
+	int ra, rb, rr;
+	int rra, rrb, rrr;
+	char *strategy;
+	char *complexity;
+}				t_bench;
 
 t_stack				*ft_lstlast(t_stack *lst);
 int					stack_size(t_stack *stack);
@@ -44,7 +56,7 @@ void				sort_three(t_stack **a, t_stack **b);
 void				sort_five(t_stack **a, t_stack **b);
 void				algo_complex(t_stack **a, t_stack **b);
 void				ft_putstr_fd(char *s, int fd);
-long				disorder_metric(t_stack *stack, int size, long *total_out);
+double				disorder_metric(t_stack *stack, int size);
 void				algo_adaptive(t_stack **a, t_stack **b);
 void				algo_simple(t_stack **stack_a, t_stack **stack_b);
 void				algo_medium(t_stack **stack_a, t_stack **stack_b);
@@ -55,8 +67,9 @@ void				ft_push_hide(t_stack **src, t_stack **dest);
 void				ft_rotate_hide(t_stack **stack);
 void				ft_rrotate_hide(t_stack **stack);
 int					read_and_apply(t_stack **a, t_stack **b);
-void				no_duplicates(t_stack **stack);
+void				no_duplicate(t_stack **stack);
 long				no_long_num(const char *str);
 void				print_error(void);
+void				*ft_memset(void *s, int v, size_t n);
 
 #endif

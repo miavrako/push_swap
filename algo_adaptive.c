@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 14:00:30 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/09 22:54:42 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/10 21:24:45 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	algo_adaptive(t_stack **a, t_stack **b)
 {
-	long	total;
 	long	mistakes;
 	int		size;
 
@@ -29,11 +28,11 @@ void	algo_adaptive(t_stack **a, t_stack **b)
 		return (sort_three(a, b));
 	if (size <= 5)
 		return (sort_five(a, b));
-	mistakes = disorder_metric(*a, size, &total);
-	if (mistakes * 5 < total)
+	mistakes = disorder_metric(*a, size);
+	if (mistakes < 0.2)
 		algo_simple(a, b);
-	else if (mistakes * 2 < total)
+	else if (mistakes >= 0.2 && mistakes < 0.5)
 		algo_medium(a, b);
-	else
+	else if (mistakes >= 0.5)
 		algo_complex(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/10 15:47:52 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/11 07:45:33 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,16 @@ static long	ft_atol(const char *str)
 	return (res * sign);
 }
 
+/*void	init_bench(t_bench *bench)
+{
+	ft_memset(bench, 0, sizeof(t_bench));
+}*/
+
 int	main(int argc, char **argv)
 {
 	t_stack *a;
 	t_stack *b;
+	//t_bench bench;
 	int i;
 
 	if (argc < 2)
@@ -88,13 +94,18 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	i = 1;
+	//init_bench(&bench);
 	if (argv[1][0] == '-' && argv[1][1] == '-')
 		i = 2;
 	while (i < argc)
 	{
+		/*if (ft_strcmp(argv[i], "--bench") == 0)
+			bench.activated = 1;*/
 		push_back(&a, (int)ft_atol(argv[i]));
 		i++;
 	}
+	/*if (bench.activated)
+		print_bench();*/
 	algo_flag(&a, &b, argv[1]);
 	free_stack(a);
 	free_stack(b);

@@ -17,7 +17,8 @@ SRC =	push_swap.c \
 		stack_utils.c \
 		tiny_sort.c \
 		push_swap_utils.c\
-		ft_error.c
+		ft_error.c\
+		bench.c
 
 CHECKER_SRC =	checker.c \
 				hide_ops.c \
