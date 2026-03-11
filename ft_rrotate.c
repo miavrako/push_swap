@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rrotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:46:07 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/05 08:09:06 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/11 15:00:19 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,27 @@ static void	ft_rrotate(t_stack **stack)
 	*stack = last;
 }
 
-void	rra(t_stack **stack_a)
+void	rra(t_stack **stack_a, t_bench *bench)
 {
 	ft_rrotate(stack_a);
 	ft_putstr_fd("rra\n", 1);
+	if (bench->activated)
+		bench->rra++;
 }
 
-void	rrb(t_stack **stack_b)
+void	rrb(t_stack **stack_b, t_bench *bench)
 {
 	ft_rrotate(stack_b);
 	ft_putstr_fd("rrb\n", 1);
+	if (bench->activated)
+		bench->rrb++;
 }
 
-void	rrr(t_stack **stack_a, t_stack **stack_b)
+void	rrr(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	ft_rrotate(stack_a);
 	ft_rrotate(stack_b);
 	ft_putstr_fd("rrr\n", 1);
+	if (bench->activated)
+		bench->rrr++;
 }

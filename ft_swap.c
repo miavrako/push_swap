@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:46:11 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/05 08:09:46 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/11 14:57:06 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,32 @@ static void	ft_swap(t_stack **stack)
 		return ;
 	first = *stack;
 	second = (*stack)->next;
-	first ->next = second->next;
+	first->next = second->next;
 	second->next = first;
 	*stack = second;
 }
 
-void	sa(t_stack **stack_a)
+void	sa(t_stack **stack_a, t_bench *bench)
 {
 	ft_swap(stack_a);
 	ft_putstr_fd("sa\n", 1);
+	if (bench->activated)
+		bench->sa++;
 }
 
-void	sb(t_stack **stack_b)
+void	sb(t_stack **stack_b, t_bench *bench)
 {
 	ft_swap(stack_b);
 	ft_putstr_fd("sb\n", 1);
+	if (bench->activated)
+		bench->sb++;
 }
 
-void	ss(t_stack **stack_a, t_stack **stack_b)
+void	ss(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	ft_swap(stack_a);
 	ft_swap(stack_b);
 	ft_putstr_fd("ss\n", 1);
+	if (bench->activated)
+		bench->ss++;
 }
