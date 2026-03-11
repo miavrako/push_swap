@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/11 13:09:12 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/11 13:59:27 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,7 @@ int	main(int argc, char **argv)
 		push_back(&a, (int)ft_atol(argv[i]));
 		i++;
 	}
-	// algo_flag(&a, &b, argv[1]);
-	algo_medium(&a, &b);
+	algo_flag(&a, &b, argv[1]);
 	free_stack(a);
 	free_stack(b);
 	return (0);
