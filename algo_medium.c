@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:38:32 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/11 13:36:58 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/11 13:43:37 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,10 @@ void	push_max_to_a(t_stack **a, t_stack **b)
 	pa(a, b);
 }
 
-void	algo_medium(t_stack **stack_a, t_stack **stack_b)
+static void	push_chunks_to_b(t_stack **stack_a, t_stack **stack_b, int chunk)
 {
-	int	chunk;
 	int	pushed;
-	int	size;
 
-	if (!stack_a || !*stack_a || is_sorted(*stack_a))
-		return ;
-	size = stack_size(*stack_a);
-	if (size <= 100)
-		chunk = 15;
-	else
-		chunk = 30;
 	pushed = 0;
 	assign_indices(*stack_a);
 	while (*stack_a)
@@ -83,6 +74,18 @@ void	algo_medium(t_stack **stack_a, t_stack **stack_b)
 		else
 			ra(stack_a);
 	}
+}
+
+void	algo_medium(t_stack **stack_a, t_stack **stack_b)
+{
+	int	chunk;
+	int	size;
+
+	if (!stack_a || !*stack_a || is_sorted(*stack_a))
+		return ;
+	size = stack_size(*stack_a);
+	chunk = (size <= 100) ? 15 : 30;
+	push_chunks_to_b(stack_a, stack_b, chunk);
 	while (*stack_b)
 		push_max_to_a(stack_a, stack_b);
 }
