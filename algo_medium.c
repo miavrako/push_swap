@@ -6,18 +6,41 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:38:32 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/11 11:33:34 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/11 13:25:35 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	find_max_index(t_stack *stack)
+{
+	int	max;
+	int	idx;
+	int	pos;
+
+	if (!stack)
+		return (-1);
+	max = stack->content;
+	idx = 0;
+	pos = 0;
+	while (stack)
+	{
+		if (stack->content > max)
+		{
+			max = stack->content;
+			idx = pos;
+		}
+		pos++;
+		stack = stack->next;
+	}
+	return (idx);
+}
 void	push_max_to_a(t_stack **a, t_stack **b)
 {
 	int	pos;
 	int	size;
 
-	pos = find_min_index(*b);
+	pos = find_max_index(*b);
 	size = stack_size(*b);
 	if (pos <= size / 2)
 		while (pos--)
