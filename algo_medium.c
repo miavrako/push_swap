@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:38:32 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/11 13:25:35 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/11 13:36:58 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	find_max_index(t_stack *stack)
 	}
 	return (idx);
 }
+
 void	push_max_to_a(t_stack **a, t_stack **b)
 {
 	int	pos;

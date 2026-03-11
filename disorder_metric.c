@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   disorder_metric.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 09:14:05 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/11 07:46:13 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/11 13:30:46 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-double	disorder_metric(t_stack *stack, int size) //nataoko double satria hoe io hono no mampipoitra anle virgule
+double	disorder_metric(t_stack *stack, int size)
 {
 	t_stack	*node;
 	t_stack	*other;

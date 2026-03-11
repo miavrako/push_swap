@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/10 22:17:14 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/11 13:34:54 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,21 @@ typedef struct s_stack
 
 typedef struct s_bench
 {
-	int activated;
-	int total_operation;
-	int sa, sb, ss;
-	int pa, pb;
-	int ra, rb, rr;
-	int rra, rrb, rrr;
-	char *strategy;
-	char *complexity;
+	int		activated;
+	int		total_operation;
+	int		sa;
+	int		sb;
+	int		ss;
+	int		pa ;
+	int		pb;
+	int		ra;
+	int		rb;
+	int		rr;
+	int		rra;
+	int		rrb;
+	int		rrr;
+	char	*strategy;
+	char	*complexity;
 }				t_bench;
 
 t_stack				*ft_lstlast(t_stack *lst);
