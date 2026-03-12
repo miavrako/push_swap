@@ -14,6 +14,7 @@ SRC =	push_swap.c \
 		ft_rrotate.c \
 		ft_swap.c \
 		ft_utils.c \
+		ft_error.c \
 		stack_utils.c \
 		tiny_sort.c \
 		push_swap_utils.c\

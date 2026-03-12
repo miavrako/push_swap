@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 12:50:14 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/12 22:51:46 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 00:16:13 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ void	set_complexity(t_bench *bench)
 void	set_total_op(t_bench *bench, t_operation *op)
 {
 	bench->total_op = op->op_count;
-	bench->operation = op->operation;
+	bench->operation = op;
 }
 
-void	count_operation(t_operation *ops, t_opstats *s)
+void	count_operations(t_operation *ops, t_opstats *s)
 {
 	while (ops)
 	{

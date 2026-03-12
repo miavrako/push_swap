@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/12 23:55:12 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 00:20:31 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,6 @@ typedef struct s_stack
 	struct s_stack		*next;
 }						t_stack;
 
-typedef struct s_bench
-{
-	t_stack				*a;
-	t_stack				*b;
-	char		*strategy;
-	double		disorder_metric;
-	char		*complexity;
-	int			total_op;
-	char		*operation;
-}						t_bench;
-
 typedef struct s_operation
 {
 	t_stack				*a;
@@ -43,6 +32,17 @@ typedef struct s_operation
 	char				*operation;
 	struct s_operation	*next;
 }						t_operation;
+
+typedef struct s_bench
+{
+	t_stack				*a;
+	t_stack				*b;
+	char		*strategy;
+	double		disorder_metric;
+	char		*complexity;
+	int			total_op;
+	t_operation	*operation;
+}						t_bench;
 
 typedef struct s_opstats
 {
@@ -95,12 +95,13 @@ void	init_bench(t_bench *bench);
 void	set_strategy(t_bench *bench);
 void	set_complexity(t_bench *bench);
 void	set_total_op(t_bench *bench, t_operation *op);
-void	count_operation(t_operation *ops, t_opstats *s);
+void	count_operations(t_operation *ops, t_opstats *s);
 void	print_operation_stats(t_opstats *s);
 void	print_bench(t_bench *bench);
 int	bench_activated(int argc, char **argv);
 void	stack_a_valid(t_stack **stack_a, char **argv);
 void	free_split(char **split);
 t_stack	*stack_copy(t_stack *stack);
+void	*ft_memset(void *s, int v, size_t n);
 
 #endif
