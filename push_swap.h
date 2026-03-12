@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/12 09:35:30 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/12 15:12:02 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ typedef struct s_operation
 }						t_operation;
 
 t_stack					*ft_lstlast(t_stack *lst);
-t_stack					*ft_lstnew(void *content);
 int						stack_size(t_stack *stack);
 int						find_min_index(t_stack *stack);
 void					assign_indices(t_stack *stack);
@@ -76,13 +75,10 @@ void					algo_simple(t_stack **stack_a, t_stack **stack_b);
 void					algo_medium(t_stack **stack_a, t_stack **stack_b);
 void					algo_flag(t_stack **a, t_stack **b, char *flag);
 int						is_sorted(t_stack *stack);
-void					ft_swap_hide(t_stack **stack);
-void					ft_push_hide(t_stack **src, t_stack **dest);
-void					ft_rotate_hide(t_stack **stack);
-void					ft_rrotate_hide(t_stack **stack);
-int						read_and_apply(t_stack **a, t_stack **b);
 void					no_duplicate(t_stack **stack);
 long					no_long_num(const char *str);
 void					print_error(void);
+char					**ft_split(char const *s, char c);
+int						ft_strcmp(const char *s1, const char *s2);
 
 #endif

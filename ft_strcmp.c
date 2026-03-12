@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_added.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 09:35:03 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/12 09:46:51 by miavrako         ###   ########.fr       */
+/*   Created: 2026/03/12 14:51:11 by mirarand          #+#    #+#             */
+/*   Updated: 2026/03/12 14:51:51 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	operation_added(t_stack *operation, char *s)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	t_stack new;
-	t_stack temp;
+	while (*s1 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

@@ -17,14 +17,17 @@ SRC =	push_swap.c \
 		stack_utils.c \
 		tiny_sort.c \
 		push_swap_utils.c\
-		ft_error.c\
-		bench.c
+		bench.c\
+		ft_split.c
 
-CHECKER_SRC =	checker.c \
-				hide_ops.c \
-				checker_apply.c \
+CHECKER_SRC =	checker_bonus.c \
+				apply_ops_bonus.c \
+				apply_rotate_bonus.c \
 				stack_utils.c \
-				ft_utils.c
+				ft_utils.c\
+				ft_strcmp.c\
+				hide_ops_bonus.c\
+				read_apply_bonus.c
 
 OBJ = $(SRC:.c=.o)
 CHECKER_OBJ = $(CHECKER_SRC:.c=.o)

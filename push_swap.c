@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/11 13:59:27 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/12 14:40:42 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,19 +82,22 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 	int		i;
+	char	**args;
 
 	a = NULL;
 	b = NULL;
 	i = 1;
 	if (argc < 2)
 		return (0);
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
+		args = argv + 1;
 	if (argv[1][0] == '-' && argv[1][1] == '-')
-		i = 2;
-	while (i < argc)
-	{
-		push_back(&a, (int)ft_atol(argv[i]));
-		i++;
-	}
+		args = argv + 2;
+	i = 0;
+	while (args[i])
+		push_back(&a, (int)ft_atol(args[i++]));
 	algo_flag(&a, &b, argv[1]);
 	free_stack(a);
 	free_stack(b);

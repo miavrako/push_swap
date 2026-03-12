@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tiny_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 07:29:40 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/09 16:58:31 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/12 13:25:05 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
