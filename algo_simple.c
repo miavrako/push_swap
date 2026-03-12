@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 10:25:26 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/10 13:47:23 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/12 20:45:30 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,15 @@ static void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 	if (pos <= size / 2)
 	{
 		while (pos-- > 0)
-			ra(stack_a);
+			ra(stack_a, NULL);
 	}
 	else
 	{
 		pos = size - pos;
 		while (pos-- > 0)
-			rra(stack_a);
+			rra(stack_a, NULL);
 	}
-	pb(stack_a, stack_b);
+	pb(stack_a, stack_b, NULL);
 }
 
 void	algo_simple(t_stack **stack_a, t_stack **stack_b)
@@ -71,5 +71,5 @@ void	algo_simple(t_stack **stack_a, t_stack **stack_b)
 	}
 	sort_three(stack_a, stack_b);
 	while (*stack_b)
-		pa(stack_a, stack_b);
+		pa(stack_a, stack_b, NULL);
 }

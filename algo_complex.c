@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 07:29:40 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/11 15:00:19 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/12 20:43:37 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ static void	radix(t_stack **a, t_stack **b, int bit)
 	while (i < n)
 	{
 		if (((*a)->index >> bit) & 1)
-			ra(a);
+			ra(a, NULL);
 		else
-			pb(a, b);
+			pb(a, b, NULL);
 		i++;
 	}
 	while (*b)
-		pa(a, b);
+		pa(a, b, NULL);
 }
 
 void	algo_complex(t_stack **a, t_stack **b)
