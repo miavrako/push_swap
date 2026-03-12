@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 19:09:39 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/12 10:02:45 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/12 23:04:39 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,11 @@ void	algo_flag(t_stack **a, t_stack **b, char *flag)
 		algo_complex(a, b);
 	else
 		algo_adaptive(a, b);
+}
+
+int	bench_activated(int argc, char **argv)
+{
+	if (argc > 1 && !ft_strcmp(argv[1], "--bench"))
+		return (1);
+	return (0);
 }

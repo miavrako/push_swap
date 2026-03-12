@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:46:03 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/12 20:54:02 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/12 23:55:39 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ void	rr(t_stack **stack_a, t_stack **stack_b, t_operation **op)
 {
 	ft_rotate(stack_a);
 	ft_rotate(stack_b);
-	add_operation5(op, "rr");
+	add_operation(op, "rr");
 }

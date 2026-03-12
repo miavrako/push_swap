@@ -17,10 +17,11 @@ SRC =	push_swap.c \
 		stack_utils.c \
 		tiny_sort.c \
 		push_swap_utils.c\
-		bench.c\
 		ft_split.c\
 		add_operation.c\
-		print_operation.c
+		print_operation.c\
+		bench_utils.c\
+		print_bench.c
 
 CHECKER_SRC =	checker_bonus.c \
 				apply_ops_bonus.c \

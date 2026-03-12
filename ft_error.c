@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:27:03 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/12 21:49:48 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/12 23:34:30 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,48 +20,56 @@ void	print_error(void)
 	exit(EXIT_FAILURE);
 }
 
-long	no_long_num(const char *str)
+static long	ft_atol(const char *str)
 {
 	long	res;
 	int		sign;
 
 	res = 0;
 	sign = 1;
-	if (!*str)
-		print_error();
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 			sign = -1;
 		str++;
 	}
-	while (*str)
+	while (*str >= '0' && *str <= '9')
 	{
-		if (*str < '0' || *str > '9')
-			print_error();
 		res = res * 10 + (*str - '0');
-		if ((sign * res) < INT_MIN || (sign * res) > INT_MAX)
-			print_error();
 		str++;
 	}
-	return (sign * res);
+	return (res * sign);
 }
 
-void	no_duplicate(t_stack **stack)
+int	num_duplicate(t_stack **stack, int value)
 {
-	t_stack	*node;
-	t_stack	*other;
-
-	node = *stack;
-	while (node)
+	while (*stack)
 	{
-		other = node->next;
-		while (other)
-		{
-			if (node->content == other->content)
-				print_error();
-			other = other->next;
-		}
-		node = node->next;
+		if ((*stack)->content == value)
+			return (1);
+		*stack = (*stack)->next;
+	}
+	return (0);
+}
+
+void	stack_a_valid(t_stack **stack_a, char **argv)
+{
+	long	num;
+	int		i;
+
+	i = 0;
+	while (argv[i])
+	{
+		if (*argv[i] < '0' || *argv[i] > '9')
+			print_error();
+		num = ft_atol(argv[i]);
+		if (num < INT_MIN || num > INT_MAX)
+			print_error();
+		if (num_duplicate(stack_a, num))
+			print_error();
+		i++;
 	}
 }
+

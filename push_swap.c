@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/12 14:40:42 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/12 23:54:21 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	free_stack(t_stack *stack)
 	}
 }
 
-static t_stack	*new_node(int value)
+/*static t_stack	*new_node(int value)
 {
 	t_stack	*node;
 
@@ -35,9 +35,9 @@ static t_stack	*new_node(int value)
 	node->index = 0;
 	node->next = NULL;
 	return (node);
-}
+}*/
 
-static void	push_back(t_stack **stack, int value)
+/*static void	push_back(t_stack **stack, int value)
 {
 	t_stack	*node;
 	t_stack	*last;
@@ -52,9 +52,9 @@ static void	push_back(t_stack **stack, int value)
 	}
 	last = ft_lstlast(*stack);
 	last->next = node;
-}
+}*/
 
-static long	ft_atol(const char *str)
+/*static long	ft_atol(const char *str)
 {
 	long	res;
 	int		sign;
@@ -75,9 +75,9 @@ static long	ft_atol(const char *str)
 		str++;
 	}
 	return (res * sign);
-}
+}*/
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
@@ -101,5 +101,90 @@ int	main(int argc, char **argv)
 	algo_flag(&a, &b, argv[1]);
 	free_stack(a);
 	free_stack(b);
+	return (0);
+}*/
+
+t_stack	*stack_copy(t_stack *src)
+{
+	t_stack	*copy;
+	t_stack	*new_node;
+	t_stack	*last;
+
+	copy = NULL;
+	last = NULL;
+	while (src)
+	{
+		new_node = malloc(sizeof(t_stack));
+		if (!new_node)
+		{
+			free_stack(copy);
+			return (NULL);
+		}
+		new_node->content = src->content;
+		new_node->index = src->index;
+		new_node->next = NULL;
+		if (!copy)
+			copy = new_node;
+		else
+			last->next = new_node;
+		last = new_node;
+		src = src->next;
+	}
+	return (copy);
+}
+
+int main(int argc, char **argv)
+{
+	t_stack	*a;
+	t_stack	*b;
+	t_bench	bench;
+	char	**args;
+	char	*flag;
+	int	from_split;
+	int	bench_on;
+
+	a = NULL;
+	b = NULL;
+	flag = NULL;
+	from_split = 0;
+	bench_on = bench_activated(argc, argv);
+
+	if (argc < 2)
+		return (0);
+	if (bench_on)
+	{
+		argc--;
+		argv++;
+	}
+	if (argc < 2)
+		print_error();
+	if (argv[1][0] == '-' && argv[1][1] == '-')
+	{
+		flag = argv[1];
+		if (argc == 2)
+			print_error();
+		args = argv + 2;
+	}
+	else if (argc == 2)
+	{
+		args = ft_split(argv[1], ' ');
+		from_split = 1;
+	}
+	else
+		args = argv + 1;
+	stack_a_valid(&a, args);
+	bench.a = stack_copy(a);
+	bench.operation = NULL;
+	if (flag)
+		algo_flag(&a, &b, flag);
+	else
+		algo_adaptive(&a, &b);
+	if (bench_on)
+		print_bench(&bench);
+	free_stack(a);
+	free_stack(b);
+	free_stack(bench.a);
+	if (from_split)
+		free_split(args);
 	return (0);
 }

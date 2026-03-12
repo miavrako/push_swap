@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/12 22:02:50 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/12 23:55:12 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,38 @@ typedef struct s_stack
 
 typedef struct s_bench
 {
+	t_stack				*a;
+	t_stack				*b;
 	char		*strategy;
 	double		disorder_metric;
 	char		*complexity;
 	int			total_op;
-	t_operation	*operation;
+	char		*operation;
 }						t_bench;
 
 typedef struct s_operation
 {
 	t_stack				*a;
 	t_stack				*b;
-	t_operation			*op;
 	int					op_count;
 	char				*operation;
 	struct s_operation	*next;
 }						t_operation;
+
+typedef struct s_opstats
+{
+	int	sa;
+	int	sb;
+	int	ss;
+	int	pa;
+	int	pb;
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+}	t_opstats;
 
 t_stack		*ft_lstlast(t_stack *lst);
 int			stack_size(t_stack *stack);
@@ -69,12 +85,22 @@ void		algo_simple(t_stack **stack_a, t_stack **stack_b);
 void		algo_medium(t_stack **stack_a, t_stack **stack_b);
 void		algo_flag(t_stack **a, t_stack **b, char *flag);
 int			is_sorted(t_stack *stack);
-void		no_duplicate(t_stack **stack);
-long		no_long_num(const char *str);
+int			num_duplicate(t_stack **stack, int value);
 void		print_error(void);
 char		**ft_split(char const *s, char c);
 int			ft_strcmp(const char *s1, const char *s2);
 void		add_operation(t_operation **lst, char *operation);
 void		print_operation(t_operation *op);
+void	init_bench(t_bench *bench);
+void	set_strategy(t_bench *bench);
+void	set_complexity(t_bench *bench);
+void	set_total_op(t_bench *bench, t_operation *op);
+void	count_operation(t_operation *ops, t_opstats *s);
+void	print_operation_stats(t_opstats *s);
+void	print_bench(t_bench *bench);
+int	bench_activated(int argc, char **argv);
+void	stack_a_valid(t_stack **stack_a, char **argv);
+void	free_split(char **split);
+t_stack	*stack_copy(t_stack *stack);
 
 #endif
