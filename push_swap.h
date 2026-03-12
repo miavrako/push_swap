@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/12 09:11:06 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/12 09:35:30 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_operation
 }						t_operation;
 
 t_stack					*ft_lstlast(t_stack *lst);
+t_stack					*ft_lstnew(void *content);
 int						stack_size(t_stack *stack);
 int						find_min_index(t_stack *stack);
 void					assign_indices(t_stack *stack);
