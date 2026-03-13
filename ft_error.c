@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:27:03 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/12 23:34:30 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 15:33:35 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,15 @@ static long	ft_atol(const char *str)
 	return (res * sign);
 }
 
-int	num_duplicate(t_stack **stack, int value)
+int	num_duplicate(t_stack *stack, int value)
 {
-	while (*stack)
+	while (stack)
 	{
-		if ((*stack)->content == value)
-			return (1);
-		*stack = (*stack)->next;
+		if ((stack)->content == value)
+			return (0);
+		stack = (stack)->next;
 	}
-	return (0);
+	return (1);
 }
 
 void	stack_a_valid(t_stack **stack_a, char **argv)
@@ -59,17 +59,24 @@ void	stack_a_valid(t_stack **stack_a, char **argv)
 	long	num;
 	int		i;
 
-	i = 0;
+	i = 1;
 	while (argv[i])
 	{
-		if (*argv[i] < '0' || *argv[i] > '9')
-			print_error();
+		// if (*argv[i] < '0' || *argv[i] > '9')
+		// {
+		// 	ft_printf("") print_error();
+		// }
 		num = ft_atol(argv[i]);
 		if (num < INT_MIN || num > INT_MAX)
+		{
+			ft_printf("overflow\n");
 			print_error();
-		if (num_duplicate(stack_a, num))
+		}
+		if (!num_duplicate(stack_a, num))
+		{
+			ft_printf("duplicate\n");
 			print_error();
+		}
 		i++;
 	}
 }
-

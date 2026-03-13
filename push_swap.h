@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 14:58:33 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 15:30:09 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void					algo_medium(t_stack **stack_a, t_stack **stack_b,
 							t_operation **op);
 void					algo_flag(t_stack **a, t_stack **b, char *flag);
 int						is_sorted(t_stack *stack);
-int						num_duplicate(t_stack **stack, int value);
+int						num_duplicate(t_stack *stack, int value);
 void					print_error(void);
 char					**ft_split(char const *s, char c);
 int						ft_strcmp(const char *s1, const char *s2);

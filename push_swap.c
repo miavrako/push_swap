@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 14:38:05 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 15:23:35 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ int	main(int argc, char **argv)
 	if (argv[1][0] == '-' && argv[1][1] == '-')
 		args = argv + 2;
 	i = 0;
+	stack_a_valid(&a, args);
 	while (args[i])
 		push_back(&a, (int)ft_atol(args[i++]));
 	algo_flag(&a, &b, argv[1]);
