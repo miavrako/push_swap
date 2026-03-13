@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/12 23:54:21 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 13:01:39 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@ static void	free_stack(t_stack *stack)
 /*static t_stack	*new_node(int value)
 {
 	t_stack	*node;
+	t_stack	*node;
+	t_stack	*last;
+	long	res;
+	int		sign;
+	t_stack	*a;
+	t_stack	*b;
+	int		i;
+	char	**args;
+	t_stack	*copy;
+	t_stack	*new_node;
+	t_stack	*last;
+	t_stack	*copy;
+	t_stack	*new_node;
+	t_stack	*last;
 
 	node = malloc(sizeof(t_stack));
 	if (!node)
@@ -36,12 +50,8 @@ static void	free_stack(t_stack *stack)
 	node->next = NULL;
 	return (node);
 }*/
-
 /*static void	push_back(t_stack **stack, int value)
 {
-	t_stack	*node;
-	t_stack	*last;
-
 	node = new_node(value);
 	if (!node)
 		return ;
@@ -53,12 +63,8 @@ static void	free_stack(t_stack *stack)
 	last = ft_lstlast(*stack);
 	last->next = node;
 }*/
-
 /*static long	ft_atol(const char *str)
 {
-	long	res;
-	int		sign;
-
 	res = 0;
 	sign = 1;
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
@@ -76,14 +82,8 @@ static void	free_stack(t_stack *stack)
 	}
 	return (res * sign);
 }*/
-
 /*int	main(int argc, char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
-	int		i;
-	char	**args;
-
 	a = NULL;
 	b = NULL;
 	i = 1;
@@ -103,7 +103,6 @@ static void	free_stack(t_stack *stack)
 	free_stack(b);
 	return (0);
 }*/
-
 t_stack	*stack_copy(t_stack *src)
 {
 	t_stack	*copy;
@@ -133,22 +132,23 @@ t_stack	*stack_copy(t_stack *src)
 	return (copy);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
-	t_bench	bench;
-	char	**args;
-	char	*flag;
-	int	from_split;
-	int	bench_on;
+	t_stack		*a;
+	t_stack		*b;
+	t_bench		bench;
+	char		**args;
+	char		*flag;
+	int			from_split;
+	int			bench_on;
+	t_operation	*op;
 
 	a = NULL;
 	b = NULL;
 	flag = NULL;
 	from_split = 0;
+	op = NULL;
 	bench_on = bench_activated(argc, argv);
-
 	if (argc < 2)
 		return (0);
 	if (bench_on)
@@ -176,7 +176,10 @@ int main(int argc, char **argv)
 	bench.a = stack_copy(a);
 	bench.operation = NULL;
 	if (flag)
+	{
 		algo_flag(&a, &b, flag);
+		print_operation(op);
+	}
 	else
 		algo_adaptive(&a, &b);
 	if (bench_on)

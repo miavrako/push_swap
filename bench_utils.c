@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 12:50:14 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/13 00:16:13 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 12:53:10 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	set_strategy(t_bench *bench)
 {
 	if (bench->disorder_metric < 20.0)
 		bench->strategy = "simple";
-	else if (bench->disorder_metric > 20.0 &&bench->disorder_metric < 50.0)
+	else if (bench->disorder_metric > 20.0 && bench->disorder_metric < 50.0)
 		bench->strategy = "medium";
 	else
 		bench->strategy = "complex";
@@ -41,10 +41,12 @@ void	set_complexity(t_bench *bench)
 		bench->complexity = "O(n log n)";
 }
 
-void	set_total_op(t_bench *bench, t_operation *op)
+void	set_total_op(t_bench *bench)
 {
+	t_program *op;
+	op = NULL;
+
 	bench->total_op = op->op_count;
-	bench->operation = op;
 }
 
 void	count_operations(t_operation *ops, t_opstats *s)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 09:39:49 by mirarand          #+#    #+#             */
-/*   Updated: 2026/02/25 14:27:21 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/13 12:55:52 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define FT_PRINTF_H
 
 # define NULL_MESSAGE "(null)"
-# include <stdarg.h>
 # include <limits.h>
+# include <stdarg.h>
 # include <stdint.h>
 # include <unistd.h>
 
@@ -32,5 +32,7 @@ void	print_unsigned(unsigned int number, int *counter);
 void	ft_putchar(char c, int *counter);
 
 void	print_str(const char *str, int *counter);
+
+void		print_float(double val, int *counter);
 
 #endif

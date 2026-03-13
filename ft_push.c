@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:45:56 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/12 20:53:49 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 11:17:26 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,16 @@ static void	ft_push(t_stack **src, t_stack **dest)
 	*dest = tmp;
 }
 
-void	pa(t_stack **stack_a, t_stack **stack_b, t_operation **op)
+void	pa(t_stack **stack_a, t_stack **stack_b, t_program *program)
 {
 	ft_push(stack_b, stack_a);
-	add_operation(op, "pa");
+	add_operation(program, "pa");
+	program->pa++;
 }
 
-void	pb(t_stack **stack_a, t_stack **stack_b, t_operation **op)
+void	pb(t_stack **stack_a, t_stack **stack_b, t_program *program)
 {
 	ft_push(stack_a, stack_b);
-	add_operation(op, "pb");
+	add_operation(program, "pb");
+	program->pb++;
 }

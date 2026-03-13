@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   disorder_metric.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 09:14:05 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/11 13:30:46 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/13 11:34:52 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-double	disorder_metric(t_stack *stack, int size)
+float	disorder_metric(t_stack *stack, int size)
 {
 	t_stack	*node;
 	t_stack	*other;

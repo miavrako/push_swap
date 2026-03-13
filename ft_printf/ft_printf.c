@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 09:39:04 by mirarand          #+#    #+#             */
-/*   Updated: 2026/02/26 09:28:02 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/13 12:04:01 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	print_arg(const char *str, va_list *arg, int index, int *counter)
 		print_hex(va_arg(*arg, unsigned int), 'A', counter);
 	else if (str[index] == '%')
 		ft_putchar(str[index], counter);
+	else if (str[index] == 'f')
+		print_float(va_arg(*arg, double), counter);
 }
 
 int	ft_printf(const char *str, ...)
