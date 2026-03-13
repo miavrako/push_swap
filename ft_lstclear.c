@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 14:45:56 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 13:39:41 by miavrako         ###   ########.fr       */
+/*   Created: 2026/03/13 14:56:13 by miavrako          #+#    #+#             */
+/*   Updated: 2026/03/13 14:58:20 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_push(t_stack **src, t_stack **dest)
+static void	ft_lstdelone(t_operation *lst, void (*del)(void *))
 {
-	t_stack	*tmp;
-
-	if (!src || !*src)
+	if (!lst)
 		return ;
-	tmp = *src;
-	*src = (*src)->next;
-	tmp->next = *dest;
-	*dest = tmp;
+	if (del)
+		del(lst->operation);
+	free(lst);
 }
-
-void	pa(t_stack **stack_a, t_stack **stack_b, t_operation **ops)
+void	ft_lstclear(t_operation **lst, void (*del)(void *))
 {
-	ft_push(stack_b, stack_a);
-	add_operation(ops, "pa");
-	// program->pa++;
-}
+	t_operation	*t;
 
-void	pb(t_stack **stack_a, t_stack **stack_b, t_operation **ops)
-{
-	ft_push(stack_a, stack_b);
-	add_operation(ops, "pb");
-	// program->pb++;
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		t = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = t;
+	}
+	*lst = NULL;
 }

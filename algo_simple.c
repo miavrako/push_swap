@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 10:25:26 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/13 08:19:19 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 14:29:54 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	val_min(t_stack *stack)
 	return (min_pos);
 }
 
-static void	push_to_b(t_stack **stack_a, t_stack **stack_b)
+static void	push_to_b(t_stack **stack_a, t_stack **stack_b, t_operation **op)
 {
 	int	pos;
 	int	size;
@@ -46,18 +46,18 @@ static void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 	if (pos <= size / 2)
 	{
 		while (pos-- > 0)
-			ra(stack_a, NULL);
+			ra(stack_a, op);
 	}
 	else
 	{
 		pos = size - pos;
 		while (pos-- > 0)
-			rra(stack_a, NULL);
+			rra(stack_a, op);
 	}
-	pb(stack_a, stack_b, NULL);
+	pb(stack_a, stack_b, op);
 }
 
-void	algo_simple(t_stack **stack_a, t_stack **stack_b)
+void	algo_simple(t_stack **stack_a, t_stack **stack_b, t_operation **op)
 {
 	int	size;
 
@@ -66,10 +66,10 @@ void	algo_simple(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	while (size > 3)
 	{
-		push_to_b(stack_a, stack_b);
+		push_to_b(stack_a, stack_b, op);
 		size--;
 	}
-	sort_three(stack_a, stack_b);
+	sort_three(stack_a, stack_b, op);
 	while (*stack_b)
-		pa(stack_a, stack_b, NULL);
+		pa(stack_a, stack_b, op);
 }

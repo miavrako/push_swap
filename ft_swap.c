@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:46:11 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 09:25:14 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 13:35:02 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,24 @@ static void	ft_swap(t_stack **stack)
 	*stack = second;
 }
 
-void	sa(t_stack **stack_a, t_program *program)
+void	sa(t_stack **stack_a, t_operation **ops)
 {
 	ft_swap(stack_a);
-	add_operation(program, "sa");
-	program->sa++;
+	add_operation(ops, "sa");
+	// program->sa++;
 }
 
-void	sb(t_stack **stack_b, t_program *program)
+void	sb(t_stack **stack_b, t_operation **ops)
 {
 	ft_swap(stack_b);
-	add_operation(program, "sb");
-	program->sb++;
+	add_operation(ops, "sb");
+	// program->sb++;
 }
 
-void	ss(t_stack **stack_a, t_stack **stack_b, t_program *program)
+void	ss(t_stack **stack_a, t_stack **stack_b, t_operation **ops)
 {
 	ft_swap(stack_a);
 	ft_swap(stack_b);
-	add_operation(program, "ss");
-	program->ss++;
+	add_operation(ops, "ss");
+	// program->ss++;
 }

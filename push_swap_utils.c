@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 19:09:39 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 12:34:43 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 15:01:56 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,19 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 void	algo_flag(t_stack **a, t_stack **b, char *flag)
 {
+	t_operation	*op;
+
+	op = NULL;
 	if (ft_strcmp(flag, "--simple") == 0)
-		algo_simple(a, b);
+		algo_simple(a, b, &op);
 	else if (ft_strcmp(flag, "--medium") == 0)
-		algo_medium(a, b);
+		algo_medium(a, b, &op);
 	else if (ft_strcmp(flag, "--complex") == 0)
-		algo_complex(a, b);
+		algo_complex(a, b, &op);
 	else
-		algo_adaptive(a, b);
+		algo_adaptive(a, b, &op);
+	print_operation(op);
+	ft_lstclear(&op, NULL);
 }
 
 int	bench_activated(int argc, char **argv)

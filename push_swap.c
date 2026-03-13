@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 13:01:39 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 14:38:05 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,9 @@ static void	free_stack(t_stack *stack)
 	}
 }
 
-/*static t_stack	*new_node(int value)
+static t_stack	*new_node(int value)
 {
 	t_stack	*node;
-	t_stack	*node;
-	t_stack	*last;
-	long	res;
-	int		sign;
-	t_stack	*a;
-	t_stack	*b;
-	int		i;
-	char	**args;
-	t_stack	*copy;
-	t_stack	*new_node;
-	t_stack	*last;
-	t_stack	*copy;
-	t_stack	*new_node;
-	t_stack	*last;
 
 	node = malloc(sizeof(t_stack));
 	if (!node)
@@ -49,22 +35,12 @@ static void	free_stack(t_stack *stack)
 	node->index = 0;
 	node->next = NULL;
 	return (node);
-}*/
-/*static void	push_back(t_stack **stack, int value)
+}
+static long	ft_atol(const char *str)
 {
-	node = new_node(value);
-	if (!node)
-		return ;
-	if (!*stack)
-	{
-		*stack = node;
-		return ;
-	}
-	last = ft_lstlast(*stack);
-	last->next = node;
-}*/
-/*static long	ft_atol(const char *str)
-{
+	long	res;
+	int		sign;
+
 	res = 0;
 	sign = 1;
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
@@ -81,9 +57,30 @@ static void	free_stack(t_stack *stack)
 		str++;
 	}
 	return (res * sign);
-}*/
-/*int	main(int argc, char **argv)
+}
+static void	push_back(t_stack **stack, int value)
 {
+	t_stack	*node;
+	t_stack	*last;
+
+	node = new_node(value);
+	if (!node)
+		return ;
+	if (!*stack)
+	{
+		*stack = node;
+		return ;
+	}
+	last = ft_lstlast(*stack);
+	last->next = node;
+}
+int	main(int argc, char **argv)
+{
+	t_stack	*a;
+	t_stack	*b;
+	int		i;
+	char	**args;
+
 	a = NULL;
 	b = NULL;
 	i = 1;
@@ -102,8 +99,8 @@ static void	free_stack(t_stack *stack)
 	free_stack(a);
 	free_stack(b);
 	return (0);
-}*/
-t_stack	*stack_copy(t_stack *src)
+}
+/*t_stack	*stack_copy(t_stack *src)
 {
 	t_stack	*copy;
 	t_stack	*new_node;
@@ -190,4 +187,4 @@ int	main(int argc, char **argv)
 	if (from_split)
 		free_split(args);
 	return (0);
-}
+}*/

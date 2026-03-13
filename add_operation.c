@@ -6,32 +6,31 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:24:23 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/13 09:18:08 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 13:27:50 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	add_operation(t_program *program, char *operation)
+void	add_operation(t_operation **lst, char *value)
 {
+	t_operation	*last;
 	t_operation	*new;
-	t_operation	*temp;
 
-	if (!program)
+	if (!lst)
 		return ;
-	new = malloc(sizeof(t_operation));
+	new = (t_operation *)malloc(sizeof(t_operation));
 	if (!new)
 		return ;
-	new->operation = operation;
+	new->operation = value;
 	new->next = NULL;
-	if (!program->op)
-		program->op = new;
-	else
+	if (*lst == NULL)
 	{
-		temp = program->op;
-		while (temp->next)
-			temp = temp->next;
-		temp->next = new;
+		*lst = new;
+		return ;
 	}
-	program->op_count++;
+	last = *lst;
+	while (last->next)
+		last = last->next;
+	last->next = new;
 }

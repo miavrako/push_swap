@@ -6,20 +6,20 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 07:29:40 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/12 23:57:35 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 14:29:00 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_two(t_stack **a, t_stack **b)
+void	sort_two(t_stack **a, t_stack **b, t_operation **op)
 {
 	(void)b;
 	if (*a && (*a)->next && (*a)->content > (*a)->next->content)
-		sa(a, NULL);
+		sa(a, op);
 }
 
-void	sort_three(t_stack **a, t_stack **b)
+void	sort_three(t_stack **a, t_stack **b, t_operation **op)
 {
 	int	top;
 	int	mid;
@@ -30,24 +30,24 @@ void	sort_three(t_stack **a, t_stack **b)
 	mid = (*a)->next->content;
 	bot = (*a)->next->next->content;
 	if (top > mid && mid < bot && top < bot)
-		sa(a, NULL);
+		sa(a, op);
 	else if (top > mid && mid > bot)
 	{
-		sa(a, NULL);
-		rra(a, NULL);
+		sa(a, op);
+		rra(a, op);
 	}
 	else if (top > mid && mid < bot && top > bot)
-		ra(a, NULL);
+		ra(a, op);
 	else if (top < mid && mid > bot && top < bot)
 	{
-		sa(a, NULL);
-		ra(a, NULL);
+		sa(a, op);
+		ra(a, op);
 	}
 	else if (top < mid && mid > bot && top > bot)
-		rra(a, NULL);
+		rra(a, op);
 }
 
-void	sort_five(t_stack **a, t_stack **b)
+void	sort_five(t_stack **a, t_stack **b, t_operation **op)
 {
 	int	min_pos;
 	int	size;
@@ -58,16 +58,16 @@ void	sort_five(t_stack **a, t_stack **b)
 		min_pos = find_min_index(*a);
 		if (min_pos <= size / 2)
 			while (min_pos-- > 0)
-				ra(a, NULL);
+				ra(a, op);
 		else
 		{
 			min_pos = size - min_pos;
 			while (min_pos-- > 0)
-				rra(a, NULL);
+				rra(a, op);
 		}
-		pb(a, b, NULL);
+		pb(a, b, op);
 	}
-	sort_three(a, b);
+	sort_three(a, b, op);
 	while (*b)
-		pa(a, b, NULL);
+		pa(a, b, op);
 }

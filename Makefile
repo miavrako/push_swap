@@ -22,7 +22,8 @@ SRC =	push_swap.c \
 		add_operation.c\
 		print_operation.c\
 		bench_utils.c\
-		print_bench.c
+		print_bench.c\
+		ft_lstclear.c
 
 CHECKER_SRC =	checker_bonus.c \
 				apply_ops_bonus.c \

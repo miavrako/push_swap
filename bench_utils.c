@@ -6,13 +6,13 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 12:50:14 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/13 12:53:10 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 14:39:48 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_bench(t_bench *bench)
+/*void	init_bench(t_bench *bench)
 {
 	bench->disorder_metric = 0.0;
 	bench->strategy = NULL;
@@ -43,13 +43,13 @@ void	set_complexity(t_bench *bench)
 
 void	set_total_op(t_bench *bench)
 {
-	t_program *op;
-	op = NULL;
+	t_program	*op;
 
-	bench->total_op = op->op_count;
+	op = NULL;
+	bench->total_op = op->count;
 }
 
-void	count_operations(t_operation *ops, t_opstats *s)
+void	count_operations(t_operation *ops, t_program *s)
 {
 	while (ops)
 	{
@@ -77,4 +77,4 @@ void	count_operations(t_operation *ops, t_opstats *s)
 			s->rrr++;
 		ops = ops->next;
 	}
-}
+}*/

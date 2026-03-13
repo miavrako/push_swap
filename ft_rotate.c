@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:46:03 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 09:22:44 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 13:33:41 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,24 @@ static void	ft_rotate(t_stack **stack)
 	last->next = first;
 }
 
-void	ra(t_stack **stack_a, t_program *program)
+void	ra(t_stack **stack_a, t_operation **ops)
 {
 	ft_rotate(stack_a);
-	add_operation(program, "ra");
-	program->ra++;
+	add_operation(ops, "ra");
+	// program->ra++;
 }
 
-void	rb(t_stack **stack_b, t_program *program)
+void	rb(t_stack **stack_b, t_operation **ops)
 {
 	ft_rotate(stack_b);
-	add_operation(program, "rb");
-	program->rb++;
+	add_operation(ops, "rb");
+	// program->rb++;
 }
 
-void	rr(t_stack **stack_a, t_stack **stack_b, t_program *program)
+void	rr(t_stack **stack_a, t_stack **stack_b, t_operation **ops)
 {
 	ft_rotate(stack_a);
 	ft_rotate(stack_b);
-	add_operation(program, "rr");
-	program->rr++;
+	add_operation(ops, "rr");
+	// program->rr++;
 }

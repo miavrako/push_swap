@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:38:32 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/12 20:45:04 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/13 14:31:57 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	find_max_index(t_stack *stack)
 	return (idx);
 }
 
-static void	push_max_to_a(t_stack **a, t_stack **b)
+static void	push_max_to_a(t_stack **a, t_stack **b, t_operation **op)
 {
 	int	pos;
 	int	size;
@@ -45,14 +45,15 @@ static void	push_max_to_a(t_stack **a, t_stack **b)
 	size = stack_size(*b);
 	if (pos <= size / 2)
 		while (pos--)
-			rb(b, NULL);
+			rb(b, op);
 	else
 		while (pos++ < size)
-			rrb(b, NULL);
-	pa(a, b, NULL);
+			rrb(b, op);
+	pa(a, b, op);
 }
 
-static void	push_chunks_to_b(t_stack **stack_a, t_stack **stack_b, int chunk)
+static void	push_chunks_to_b(t_stack **stack_a, t_stack **stack_b, int chunk,
+		t_operation **op)
 {
 	int	pushed;
 
@@ -62,21 +63,21 @@ static void	push_chunks_to_b(t_stack **stack_a, t_stack **stack_b, int chunk)
 	{
 		if ((*stack_a)->index <= pushed)
 		{
-			pb(stack_a, stack_b, NULL);
-			rb(stack_b, NULL);
+			pb(stack_a, stack_b, op);
+			rb(stack_b, op);
 			pushed++;
 		}
 		else if ((*stack_a)->index <= pushed + chunk)
 		{
-			pb(stack_a, stack_b, NULL);
+			pb(stack_a, stack_b, op);
 			pushed++;
 		}
 		else
-			ra(stack_a, NULL);
+			ra(stack_a, op);
 	}
 }
 
-void	algo_medium(t_stack **stack_a, t_stack **stack_b)
+void	algo_medium(t_stack **stack_a, t_stack **stack_b, t_operation **op)
 {
 	int	chunk;
 	int	size;
@@ -88,7 +89,7 @@ void	algo_medium(t_stack **stack_a, t_stack **stack_b)
 		chunk = 15;
 	else
 		chunk = 30;
-	push_chunks_to_b(stack_a, stack_b, chunk);
+	push_chunks_to_b(stack_a, stack_b, chunk, op);
 	while (*stack_b)
-		push_max_to_a(stack_a, stack_b);
+		push_max_to_a(stack_a, stack_b, op);
 }
