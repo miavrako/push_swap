@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 15:30:09 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/17 09:02:23 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ typedef struct s_bench
 {
 	t_stack				*a;
 	t_stack				*b;
-	int					*strategy;
+	char					*strategy;
 	double				disorder_metric;
-	int					*complexity;
+	char					*complexity;
 	int					total_op;
 	t_operation			*operation;
 }						t_bench;
@@ -90,7 +90,7 @@ void					algo_simple(t_stack **stack_a, t_stack **stack_b,
 							t_operation **op);
 void					algo_medium(t_stack **stack_a, t_stack **stack_b,
 							t_operation **op);
-void					algo_flag(t_stack **a, t_stack **b, char *flag);
+void					algo_flag(t_stack **a, t_stack **b, char *flag, t_operation **op);
 int						is_sorted(t_stack *stack);
 int						num_duplicate(t_stack *stack, int value);
 void					print_error(void);
@@ -101,15 +101,18 @@ void					print_operation(t_operation *op);
 void					init_bench(t_bench *bench);
 void					set_strategy(t_bench *bench);
 void					set_complexity(t_bench *bench);
-void					set_total_op(t_bench *bench);
+// void					set_total_op(t_bench *bench);
 void					count_operations(t_operation *ops, t_program *s);
-void					print_operation_stats(t_program *s);
+void					count_operations2(t_operation *ops, t_program *s);
 void					print_bench(t_bench *bench);
 int						bench_activated(int argc, char **argv);
 void					stack_a_valid(t_stack **stack_a, char **argv);
 void					free_split(char **split);
-t_stack					*stack_copy(t_stack *stack);
 void					*ft_memset(void *s, int v, size_t n);
 void					ft_lstclear(t_operation **lst, void (*del)(void *));
-
+void					push_back(t_stack **stack, int value);
+void					run_bench(int active, t_stack *a, t_operation *op);
+char					*get_algo_flag(int argc, char **argv);
+void					free_stack(t_stack *stack);
+t_stack					*stack_copy(t_stack *src);
 #endif

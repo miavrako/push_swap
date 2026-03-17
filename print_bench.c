@@ -3,22 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   print_bench.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 22:46:56 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/13 14:40:01 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/17 09:05:27 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*void	print_operation_stats(t_program *s)
+static int	count_total(t_operation *op)
 {
-	ft_printf("[bench] sa: %d sb: %d ss: %d pa: %d pb: %d\n", s->sa, s->sb,
-		s->ss, s->pa, s->pb);
-	ft_printf("[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d\n", s->ra,
-		s->rb, s->rr, s->rra, s->rrb, s->rrr);
+	int	n;
+
+	n = 0;
+	while (op)
+	{
+		n++;
+		op = op->next;
+	}
+	return (n);
 }
+
+// static void	print_operation_stats(t_program *s)
+// {
+// 	ft_printf("[bench] sa: %d sb: %d ss: %d pa: %d pb: %d\n", s->sa, s->sb,
+// 		s->ss, s->pa, s->pb);
+// 	ft_printf("[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d\n", s->ra,
+// 		s->rb, s->rr, s->rra, s->rrb, s->rrr);
+// }
 
 void	print_bench(t_bench *bench)
 {
@@ -27,12 +40,12 @@ void	print_bench(t_bench *bench)
 
 	ft_memset(&s, 0, sizeof(t_program));
 	size = stack_size(bench->a);
-	init_bench(bench);
 	bench->disorder_metric = disorder_metric(bench->a, size);
-	set_complexity(bench);
 	set_strategy(bench);
-	set_total_op(bench);
+	set_complexity(bench);
+	bench->total_op = count_total(bench->operation);
 	count_operations(bench->operation, &s);
+	count_operations2(bench->operation, &s);
 	ft_printf("[bench] disorder: %f%%\n", bench->disorder_metric);
 	ft_printf("[bench] strategy: %s / %s\n", bench->strategy,
 		bench->complexity);
@@ -41,4 +54,15 @@ void	print_bench(t_bench *bench)
 		s.pa, s.pb);
 	ft_printf("[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d\n", s.ra,
 		s.rb, s.rr, s.rra, s.rrb, s.rrr);
-}*/
+}
+
+void	run_bench(int active, t_stack *a, t_operation *op)
+{
+	t_bench	bench;
+
+	if (!active)
+		return ;
+	bench.a = a;
+	bench.operation = op;
+	print_bench(&bench);
+}

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   bench_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 12:50:14 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/13 14:39:48 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/17 08:28:15 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*void	init_bench(t_bench *bench)
+void	init_bench(t_bench *bench)
 {
 	bench->disorder_metric = 0.0;
 	bench->strategy = NULL;
@@ -41,14 +41,6 @@ void	set_complexity(t_bench *bench)
 		bench->complexity = "O(n log n)";
 }
 
-void	set_total_op(t_bench *bench)
-{
-	t_program	*op;
-
-	op = NULL;
-	bench->total_op = op->count;
-}
-
 void	count_operations(t_operation *ops, t_program *s)
 {
 	while (ops)
@@ -63,7 +55,15 @@ void	count_operations(t_operation *ops, t_program *s)
 			s->pa++;
 		else if (!ft_strcmp(ops->operation, "pb"))
 			s->pb++;
-		else if (!ft_strcmp(ops->operation, "ra"))
+		ops = ops->next;
+	}
+}
+
+void	count_operations2(t_operation *ops, t_program *s)
+{
+	while (ops)
+	{
+		if (!ft_strcmp(ops->operation, "ra"))
 			s->ra++;
 		else if (!ft_strcmp(ops->operation, "rb"))
 			s->rb++;
@@ -77,4 +77,4 @@ void	count_operations(t_operation *ops, t_program *s)
 			s->rrr++;
 		ops = ops->next;
 	}
-}*/
+}

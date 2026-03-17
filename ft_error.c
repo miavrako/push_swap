@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:27:03 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/13 15:33:35 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/17 07:53:43 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,16 @@ void	stack_a_valid(t_stack **stack_a, char **argv)
 	long	num;
 	int		i;
 
-	i = 1;
+	i = 0;
 	while (argv[i])
 	{
-		// if (*argv[i] < '0' || *argv[i] > '9')
-		// {
-		// 	ft_printf("") print_error();
-		// }
+
 		num = ft_atol(argv[i]);
 		if (num < INT_MIN || num > INT_MAX)
-		{
-			ft_printf("overflow\n");
 			print_error();
-		}
-		if (!num_duplicate(stack_a, num))
-		{
-			ft_printf("duplicate\n");
+		if (!num_duplicate(*stack_a, num))
 			print_error();
-		}
+		push_back(stack_a, (int)num);
 		i++;
 	}
 }
