@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:27:03 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/17 07:53:43 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:03:54 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void	stack_a_valid(t_stack **stack_a, char **argv)
 	i = 0;
 	while (argv[i])
 	{
-
 		num = ft_atol(argv[i]);
 		if (num < INT_MIN || num > INT_MAX)
 			print_error();

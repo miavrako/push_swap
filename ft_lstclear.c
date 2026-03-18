@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 14:56:13 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/13 14:58:20 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:04:23 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	ft_lstdelone(t_operation *lst, void (*del)(void *))
 		del(lst->operation);
 	free(lst);
 }
+
 void	ft_lstclear(t_operation **lst, void (*del)(void *))
 {
 	t_operation	*t;

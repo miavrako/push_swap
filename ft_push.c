@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:45:56 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 13:39:41 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:10:08 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,10 @@ void	pa(t_stack **stack_a, t_stack **stack_b, t_operation **ops)
 {
 	ft_push(stack_b, stack_a);
 	add_operation(ops, "pa");
-	// program->pa++;
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b, t_operation **ops)
 {
 	ft_push(stack_a, stack_b);
 	add_operation(ops, "pb");
-	// program->pb++;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:46:11 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 13:35:02 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:10:58 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,12 @@ void	sa(t_stack **stack_a, t_operation **ops)
 {
 	ft_swap(stack_a);
 	add_operation(ops, "sa");
-	// program->sa++;
 }
 
 void	sb(t_stack **stack_b, t_operation **ops)
 {
 	ft_swap(stack_b);
 	add_operation(ops, "sb");
-	// program->sb++;
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b, t_operation **ops)
@@ -45,5 +43,4 @@ void	ss(t_stack **stack_a, t_stack **stack_b, t_operation **ops)
 	ft_swap(stack_a);
 	ft_swap(stack_b);
 	add_operation(ops, "ss");
-	// program->ss++;
 }

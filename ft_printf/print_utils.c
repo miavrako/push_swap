@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 09:55:21 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 12:55:43 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:11:35 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	print_memory(void *add, int *counter)
 	print_str("0x", counter);
 	print_hex((uintptr_t)add, 'a', counter);
 }
+
 void	print_float(double val, int *counter)
 {
 	int	decimal;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rrotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:46:07 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 13:34:35 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:10:21 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,12 @@ void	rra(t_stack **stack_a, t_operation **ops)
 {
 	ft_rrotate(stack_a);
 	add_operation(ops, "rra");
-	// program->rra++;
 }
 
 void	rrb(t_stack **stack_b, t_operation **ops)
 {
 	ft_rrotate(stack_b);
 	add_operation(ops, "rrb");
-	// program->rrb++;
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b, t_operation **ops)
@@ -47,5 +45,4 @@ void	rrr(t_stack **stack_a, t_stack **stack_b, t_operation **ops)
 	ft_rrotate(stack_a);
 	ft_rrotate(stack_b);
 	add_operation(ops, "rrr");
-	// program->rrr++;
 }

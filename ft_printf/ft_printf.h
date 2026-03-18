@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 09:39:49 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 12:55:52 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:11:19 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ void	ft_putchar(char c, int *counter);
 
 void	print_str(const char *str, int *counter);
 
-void		print_float(double val, int *counter);
+void	print_float(double val, int *counter);
 
 #endif
