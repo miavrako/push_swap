@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/19 14:47:42 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/19 16:07:27 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ static void	run_sort(t_stack **a, t_stack **b, t_operation **op, t_run *run)
 
 	a_copy = stack_copy(*a);
 	algo_flag(a, b, run->flag, op);
-	// print_operation(*op);
-	print_count_operation(*op);
+	print_operation(*op);
+	// print_count_operation(*op);
 	run_bench(run->bench, a_copy, *op, run->flag);
 	ft_lstclear(op, NULL);
 	free_stack(a_copy);
@@ -86,16 +86,28 @@ int	main(int argc, char **argv)
 	b = NULL;
 	op = NULL;
 	run.from_split = 0;
-	run.flag = get_algo_flag(argc, argv);
+	// run.flag = get_algo_flag(argc, argv);
 	run.bench = bench_activated(argc, argv);
 	if (argc < 2)
 		return (0);
 	args = build_args(argc, argv, &run.from_split);
 	if (!args)
 		return (0);
-	check_args(args);
+	if (!args[0])
+	{
+		free(args);
+		print_error();
+	}
 	stack_a_valid(&a, args);
-	free_args(args);
+	if (run.from_split)
+		free_split(args);
+	else
+		free(args);
+	if (!args[0])
+	{
+		free(args);
+		print_error();
+	}
 	run_sort(&a, &b, &op, &run);
 	free_stack(a);
 	free_stack(b);

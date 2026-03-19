@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_bench.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 22:46:56 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/19 07:44:53 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/19 16:02:42 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,6 @@ static int	count_total(t_operation *op)
 	}
 	return (n);
 }
-
-// static void	print_operation_stats(t_program *s)
-// {
-// 	ft_printf("[bench] sa: %d sb: %d ss: %d pa: %d pb: %d\n", s->sa, s->sb,
-// 		s->ss, s->pa, s->pb);
-// 	ft_printf("[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d\n", s->ra,
-// 		s->rb, s->rr, s->rra, s->rrb, s->rrr);
-// }
-
 void	print_bench(t_bench *bench)
 {
 	t_program	s;
