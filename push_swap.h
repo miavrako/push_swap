@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/18 11:09:49 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/19 07:55:13 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_bench
 	t_stack				*a;
 	t_stack				*b;
 	char				*strategy;
+	char				*forced_flag;
 	double				disorder_metric;
 	char				*complexity;
 	int					total_op;
@@ -56,6 +57,13 @@ typedef struct s_program
 	int					rrb;
 	int					rrr;
 }						t_program;
+
+typedef struct s_run
+{
+	char	*flag;
+	int		bench;
+	int		from_split;
+}			t_run;
 
 t_stack	*ft_lstlast(t_stack *lst);
 int		stack_size(t_stack *stack);
@@ -101,8 +109,9 @@ void	free_split(char **split);
 void	*ft_memset(void *s, int v, size_t n);
 void	ft_lstclear(t_operation **lst, void (*del)(void *));
 void	push_back(t_stack **stack, int value);
-void	run_bench(int active, t_stack *a, t_operation *op);
+void	run_bench(int active, t_stack *a, t_operation *op, char *flag);
 char	*get_algo_flag(int argc, char **argv);
 void	free_stack(t_stack *stack);
 t_stack	*stack_copy(t_stack *src);
+void	resolve_strategy(t_bench *bench);
 #endif

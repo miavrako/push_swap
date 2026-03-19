@@ -6,23 +6,11 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/17 09:06:55 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/19 07:55:29 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	free_stack(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	while (stack)
-	{
-		tmp = stack->next;
-		free(stack);
-		stack = tmp;
-	}
-}
 
 static int	count_nums(int argc, char **argv)
 {
@@ -73,35 +61,78 @@ static char	**build_args(int argc, char **argv, int *from_split)
 	return (fill_args(argc, argv));
 }
 
+// int	main(int argc, char **argv)
+// {
+// 	t_stack		*a;
+// 	t_stack		*b;
+// 	t_stack		*a_copy;
+// 	t_operation	*op;
+// 	char		**args;
+// 	int			from_split;
+
+// 	a = NULL;
+// 	b = NULL;
+// 	op = NULL;
+// 	from_split = 0;
+// 	if (argc < 2)
+// 		return (0);
+// 	args = build_args(argc, argv, &from_split);
+// 	if (!args || !args[0])
+// 		return (free(args), 0);
+// 	stack_a_valid(&a, args);
+// 	if (from_split)
+// 		free_split(args);
+// 	else
+// 		free(args);
+// 	a_copy = stack_copy(a);
+// 	algo_flag(&a, &b, get_algo_flag(argc, argv), &op);
+// 	print_operation(op);
+// 	run_bench(bench_activated(argc, argv), a_copy,
+// 		op, get_algo_flag(argc, argv));
+// 	ft_lstclear(&op, NULL);
+// 	free_stack(a_copy);
+// 	free_stack(a);
+// 	return (free_stack(b), 0);
+// }
+
+static void	run_sort(t_stack **a, t_stack **b,
+			t_operation **op, t_run *run)
+{
+	t_stack	*a_copy;
+
+	a_copy = stack_copy(*a);
+	algo_flag(a, b, run->flag, op);
+	print_operation(*op);
+	run_bench(run->bench, a_copy, *op, run->flag);
+	ft_lstclear(op, NULL);
+	free_stack(a_copy);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack		*a;
 	t_stack		*b;
-	t_stack		*a_copy;
 	t_operation	*op;
 	char		**args;
-	int			from_split;
+	t_run		run;
 
 	a = NULL;
 	b = NULL;
 	op = NULL;
-	from_split = 0;
+	run.from_split = 0;
+	run.flag = get_algo_flag(argc, argv);
+	run.bench = bench_activated(argc, argv);
 	if (argc < 2)
 		return (0);
-	args = build_args(argc, argv, &from_split);
+	args = build_args(argc, argv, &run.from_split);
 	if (!args || !args[0])
 		return (free(args), 0);
 	stack_a_valid(&a, args);
-	if (from_split)
+	if (run.from_split)
 		free_split(args);
 	else
 		free(args);
-	a_copy = stack_copy(a);
-	algo_flag(&a, &b, get_algo_flag(argc, argv), &op);
-	print_operation(op);
-	run_bench(bench_activated(argc, argv), a_copy, op);
-	ft_lstclear(&op, NULL);
-	free_stack(a_copy);
+	run_sort(&a, &b, &op, &run);
 	free_stack(a);
 	return (free_stack(b), 0);
 }

@@ -24,7 +24,8 @@ SRC =	push_swap.c \
 		bench_utils.c\
 		print_bench.c\
 		ft_lstclear.c\
-		stack_init.c
+		stack_init.c\
+		ft_strcmp.c\
 
 CHECKER_SRC =	checker_bonus.c \
 				apply_ops_bonus.c \
@@ -33,7 +34,9 @@ CHECKER_SRC =	checker_bonus.c \
 				ft_utils.c\
 				ft_strcmp.c\
 				hide_ops_bonus.c\
-				read_apply_bonus.c
+				read_apply_bonus.c\
+				stack_init.c\
+				ft_error.c
 
 OBJ = $(SRC:.c=.o)
 CHECKER_OBJ = $(CHECKER_SRC:.c=.o)

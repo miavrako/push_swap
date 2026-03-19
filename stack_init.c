@@ -12,6 +12,18 @@
 
 #include "push_swap.h"
 
+void	free_stack(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	while (stack)
+	{
+		tmp = stack->next;
+		free(stack);
+		stack = tmp;
+	}
+}
+
 static t_stack	*new_node(int value)
 {
 	t_stack	*node;

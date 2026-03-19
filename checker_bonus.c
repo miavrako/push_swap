@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
+#include <limits.h>
 
 static long	ft_atol(const char *str)
 {
@@ -32,48 +33,55 @@ static long	ft_atol(const char *str)
 	return (res * sign);
 }
 
-static void	push_back(t_stack **stack, int value)
+static int	is_valid_int(const char *str)
 {
-	t_stack	*node;
-	t_stack	*last;
-
-	node = malloc(sizeof(t_stack));
-	if (!node)
-		return ;
-	node->content = value;
-	node->index = 0;
-	node->next = NULL;
-	if (!*stack)
+	if (!str || !*str)
+		return (0);
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
+		str++;
+	if (!*str)
+		return (0);
+	while (*str)
 	{
-		*stack = node;
-		return ;
+		if (*str < '0' || *str > '9')
+			return (0);
+		str++;
 	}
-	last = ft_lstlast(*stack);
-	last->next = node;
-}
-
-static void	free_stack(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	while (stack)
-	{
-		tmp = stack->next;
-		free(stack);
-		stack = tmp;
-	}
+	return (1);
 }
 
 static void	init_stacks(t_stack **a, t_stack **b, int argc, char **argv)
 {
-	int	i;
+	long	num;
+	int		i;
 
 	*a = NULL;
 	*b = NULL;
 	i = 1;
 	while (i < argc)
 	{
-		push_back(a, (int)ft_atol(argv[i]));
+		if (!is_valid_int(argv[i]))
+		{
+			free_stack(*a);
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
+		}
+		num = ft_atol(argv[i]);
+		if (num < INT_MIN || num > INT_MAX)
+		{
+			free_stack(*a);
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
+		}
+		if (!num_duplicate(*a, (int)num))
+		{
+			free_stack(*a);
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
+		}
+		push_back(a, (int)num);
 		i++;
 	}
 }
@@ -88,7 +96,6 @@ int	main(int argc, char **argv)
 	init_stacks(&a, &b, argc, argv);
 	if (read_and_apply(&a, &b) == 0)
 	{
-		ft_putstr_fd("Error\n", 2);
 		free_stack(a);
 		free_stack(b);
 		return (1);
