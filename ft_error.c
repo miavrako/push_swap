@@ -43,6 +43,25 @@ static long	ft_atol(const char *str)
 	return (res * sign);
 }
 
+static int	is_valid_int(const char *str)
+{
+	if (!str || !*str)
+		return (0);
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
+		str++;
+	if (!*str)
+		return (0);
+	while (*str)
+	{
+		if (*str < '0' || *str > '9')
+			return (0);
+		str++;
+	}
+	return (1);
+}
+
 int	num_duplicate(t_stack *stack, int value)
 {
 	while (stack)
@@ -62,6 +81,8 @@ void	stack_a_valid(t_stack **stack_a, char **argv)
 	i = 0;
 	while (argv[i])
 	{
+		if (!is_valid_int(argv[i]))
+			print_error();
 		num = ft_atol(argv[i]);
 		if (num < INT_MIN || num > INT_MAX)
 			print_error();
