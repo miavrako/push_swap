@@ -29,7 +29,8 @@ SRC =	push_swap.c \
 		count_operations.c\
 		ft_atol.c\
 		free_check_args.c\
-		ft_free_stack.c
+		ft_free_stack.c\
+		ft_putnbr_fd.c
 
 CHECKER_SRC =	checker_bonus.c \
 				apply_ops_bonus.c \
@@ -55,7 +56,9 @@ $(NAME): $(OBJ) ft_printf/libftprintf.a
 ft_printf/libftprintf.a :
 	make -C ft_printf
 
-bonus: $(CHECKER_OBJ)
+bonus: $(CHECKER)
+
+$(CHECKER): $(CHECKER_OBJ)
 	$(CC) $(FLAGS) $(CHECKER_OBJ) -o $(CHECKER)
 
 %.o: %.c push_swap.h

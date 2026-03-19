@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/19 13:59:35 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:47:42 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ static void	run_sort(t_stack **a, t_stack **b, t_operation **op, t_run *run)
 
 	a_copy = stack_copy(*a);
 	algo_flag(a, b, run->flag, op);
-	print_operation(*op);
+	// print_operation(*op);
+	print_count_operation(*op);
 	run_bench(run->bench, a_copy, *op, run->flag);
 	ft_lstclear(op, NULL);
 	free_stack(a_copy);

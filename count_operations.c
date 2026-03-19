@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count_operations.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 07:57:32 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/19 07:57:59 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:44:57 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

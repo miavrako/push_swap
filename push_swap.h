@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/19 14:01:57 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:54:06 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,4 +129,6 @@ void					free_stack(t_stack *stack);
 long					ft_atol(const char *str);
 void					free_args(char **args);
 void					check_args(char **args);
+void					print_count_operation(t_operation *op);
+void					ft_putnbr_fd(int n, int fd);
 #endif

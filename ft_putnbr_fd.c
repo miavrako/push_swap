@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_operation.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 20:46:26 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/19 14:54:27 by miavrako         ###   ########.fr       */
+/*   Created: 2026/03/19 14:49:09 by miavrako          #+#    #+#             */
+/*   Updated: 2026/03/19 14:55:06 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_operation(t_operation *op)
+static void	ft_putchar_fd(char c, int fd)
 {
-	while (op)
-	{
-		ft_putstr_fd(op->operation, 1);
-		write(1, "\n", 1);
-		op = op->next;
-	}
+	write(fd, &c, 1);
 }
 
-void	print_count_operation(t_operation *op)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	count;
-
-	count = 0;
-	while (op)
+	if (n == -2147483648)
 	{
-		count++;
-		op = op->next;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	ft_putnbr_fd(count, 1);
-	write(1, "\n", 1);
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd((n % 10) + '0', fd);
+	}
 }
