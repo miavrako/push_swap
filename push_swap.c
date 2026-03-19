@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/19 07:55:29 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/19 09:55:04 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,8 +125,13 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	args = build_args(argc, argv, &run.from_split);
-	if (!args || !args[0])
-		return (free(args), 0);
+	if (!args)
+		return (0);
+	if (!args[0])
+	{
+		free(args);
+		print_error();
+	}
 	stack_a_valid(&a, args);
 	if (run.from_split)
 		free_split(args);
