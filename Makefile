@@ -26,6 +26,7 @@ SRC =	push_swap.c \
 		ft_lstclear.c\
 		stack_init.c\
 		ft_strcmp.c\
+		count_operations.c
 
 CHECKER_SRC =	checker_bonus.c \
 				apply_ops_bonus.c \
