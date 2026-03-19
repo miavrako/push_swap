@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 19:09:39 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/17 08:48:27 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:15:06 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ char	*get_algo_flag(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if (!ft_strcmp(argv[i], "--simple")
-			|| !ft_strcmp(argv[i], "--medium")
+		if (!ft_strcmp(argv[i], "--simple") || !ft_strcmp(argv[i], "--medium")
 			|| !ft_strcmp(argv[i], "--complex"))
 			return (argv[i]);
 		i++;

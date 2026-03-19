@@ -3,35 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:49:33 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/19 09:26:54 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/19 13:58:01 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 #include <limits.h>
-
-static long	ft_atol(const char *str)
-{
-	long	res;
-	int		sign;
-
-	res = 0;
-	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-		res = res * 10 + (*str++ - '0');
-	return (res * sign);
-}
 
 static int	is_valid_int(const char *str)
 {
@@ -52,6 +32,13 @@ static int	is_valid_int(const char *str)
 	return (1);
 }
 
+static void	error_and_exit(t_stack *a)
+{
+	free_stack(a);
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
+}
+
 static void	init_stacks(t_stack **a, t_stack **b, int argc, char **argv)
 {
 	long	num;
@@ -63,24 +50,12 @@ static void	init_stacks(t_stack **a, t_stack **b, int argc, char **argv)
 	while (i < argc)
 	{
 		if (!is_valid_int(argv[i]))
-		{
-			free_stack(*a);
-			ft_putstr_fd("Error\n", 2);
-			exit(1);
-		}
+			error_and_exit(*a);
 		num = ft_atol(argv[i]);
 		if (num < INT_MIN || num > INT_MAX)
-		{
-			free_stack(*a);
-			ft_putstr_fd("Error\n", 2);
-			exit(1);
-		}
+			error_and_exit(*a);
 		if (!num_duplicate(*a, (int)num))
-		{
-			free_stack(*a);
-			ft_putstr_fd("Error\n", 2);
-			exit(1);
-		}
+			error_and_exit(*a);
 		push_back(a, (int)num);
 		i++;
 	}

@@ -3,26 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 07:58:51 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/17 09:02:10 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:10:51 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	free_stack(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	while (stack)
-	{
-		tmp = stack->next;
-		free(stack);
-		stack = tmp;
-	}
-}
 
 static t_stack	*new_node(int value)
 {

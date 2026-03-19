@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:27:03 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/18 11:03:54 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:01:37 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,6 @@ void	print_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
-}
-
-static long	ft_atol(const char *str)
-{
-	long	res;
-	int		sign;
-
-	res = 0;
-	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		res = res * 10 + (*str - '0');
-		str++;
-	}
-	return (res * sign);
 }
 
 static int	is_valid_int(const char *str)
