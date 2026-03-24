@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:27:03 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/19 14:01:37 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/24 11:52:05 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ int	num_duplicate(t_stack *stack, int value)
 
 void	stack_a_valid(t_stack **stack_a, char **argv)
 {
-	long	num;
-	int		i;
+	long long	num;
+	int			i;
 
 	i = 0;
 	while (argv[i])

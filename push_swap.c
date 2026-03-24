@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/19 16:07:27 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/24 12:13:51 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	op = NULL;
 	run.from_split = 0;
-	// run.flag = get_algo_flag(argc, argv);
+	run.flag = get_algo_flag(argc, argv);
 	run.bench = bench_activated(argc, argv);
 	if (argc < 2)
 		return (0);
