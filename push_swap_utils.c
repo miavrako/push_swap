@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 19:09:39 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/24 13:06:02 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/24 15:31:46 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ char	*get_algo_flag(int argc, char **argv)
 	while (i < argc)
 	{
 		if (!ft_strcmp(argv[i], "--simple") || !ft_strcmp(argv[i], "--medium")
-			|| !ft_strcmp(argv[i], "--complex"))
+			|| !ft_strcmp(argv[i], "--complex") || !ft_strcmp(argv[i],
+				"--adaptive"))
 			return (argv[i]);
+		else
+			return ("ff");
 		i++;
 	}
 	return (NULL);
@@ -29,14 +32,17 @@ char	*get_algo_flag(int argc, char **argv)
 
 void	algo_flag(t_stack **a, t_stack **b, char *flag, t_operation **op)
 {
+	ft_printf("%s\n", flag);
 	if (flag && ft_strcmp(flag, "--simple") == 0)
 		algo_simple(a, b, op);
 	else if (flag && ft_strcmp(flag, "--medium") == 0)
 		algo_medium(a, b, op);
 	else if (flag && ft_strcmp(flag, "--complex") == 0)
 		algo_complex(a, b, op);
-	else
+	else if (flag == NULL || (flag && ft_strcmp(flag, "--adaptive") == 0))
 		algo_adaptive(a, b, op);
+	else
+		print_error();
 }
 
 int	bench_activated(int argc, char **argv)
