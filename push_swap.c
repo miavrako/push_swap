@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/24 13:48:14 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/24 21:55:10 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,39 @@ static char	**fill_args(int argc, char **argv)
 	}
 	args[j] = NULL;
 	return (args);
+}
+
+static int	is_valid_flag(const char *str)
+{
+	if (!str)
+		return (0);
+	if (ft_strcmp(str, "--simple") == 0)
+		return (1);
+	if (ft_strcmp(str, "--medium") == 0)
+		return (1);
+	if (ft_strcmp(str, "--complex") == 0)
+		return (1);
+	if (ft_strcmp(str, "--adaptive") == 0)
+		return (1);
+	if (ft_strcmp(str, "--bench") == 0)
+		return (1);
+	return (0);
+}
+
+static void	check_flags(int argc, char **argv)
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (argv[i][0] == '-' && argv[i][1] == '-')
+		{
+			if (!is_valid_flag(argv[i]))
+				print_error();
+		}
+		i++;
+	}
 }
 
 static char	**build_args(int argc, char **argv, int *from_split)
@@ -90,6 +123,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	args = build_args(argc, argv, &run.from_split);
+	check_flags(argc, argv);
 	check_args(args);
 	stack_a_valid(&a, args);
 	if (run.from_split)
