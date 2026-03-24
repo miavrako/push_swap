@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 19:09:39 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/24 21:43:41 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/24 22:00:45 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ char	*get_algo_flag(int argc, char **argv)
 
 void	algo_flag(t_stack **a, t_stack **b, char *flag, t_operation **op)
 {
-	ft_printf("%s\n", flag);
 	if (flag && ft_strcmp(flag, "--simple") == 0)
 		algo_simple(a, b, op);
 	else if (flag && ft_strcmp(flag, "--medium") == 0)

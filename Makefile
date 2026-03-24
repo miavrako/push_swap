@@ -30,6 +30,7 @@ SRC =	push_swap.c \
 		ft_atol.c\
 		check_args.c\
 		ft_free_stack.c\
+		check_flag.c
 
 CHECKER_SRC =	checker_bonus.c \
 				apply_ops_bonus.c \

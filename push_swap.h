@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/24 13:47:45 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/24 22:05:06 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,4 +127,6 @@ void					resolve_strategy(t_bench *bench);
 void					free_stack(t_stack *stack);
 long					ft_atol(const char *str);
 void					check_args(char **args);
+void					check_flags(int argc, char **argv);
+
 #endif
