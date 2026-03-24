@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 19:09:39 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/19 15:51:08 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/24 13:06:02 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,6 @@ int	bench_activated(int argc, char **argv)
 	while (i < argc)
 	{
 		if (!ft_strcmp(argv[i], "--bench"))
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int	count_only(int argc, char **argv)
-{
-	int	i;
-
-	i = 1;
-	while (i < argc)
-	{
-		if (!ft_strcmp(argv[i], "--count_only"))
 			return (1);
 		i++;
 	}

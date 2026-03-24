@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/19 14:54:06 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/24 13:47:45 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,6 @@ int						ft_strcmp(const char *s1, const char *s2);
 void					add_operation(t_operation **lst, char *value);
 void					print_operation(t_operation *op);
 void					init_bench(t_bench *bench);
-void					set_strategy(t_bench *bench);
 void					set_complexity(t_bench *bench);
 void					count_operations(t_operation *ops, t_program *s);
 void					count_operations2(t_operation *ops, t_program *s);
@@ -127,8 +126,5 @@ t_stack					*stack_copy(t_stack *src);
 void					resolve_strategy(t_bench *bench);
 void					free_stack(t_stack *stack);
 long					ft_atol(const char *str);
-void					free_args(char **args);
 void					check_args(char **args);
-void					print_count_operation(t_operation *op);
-void					ft_putnbr_fd(int n, int fd);
 #endif

@@ -28,9 +28,8 @@ SRC =	push_swap.c \
 		ft_strcmp.c\
 		count_operations.c\
 		ft_atol.c\
-		free_check_args.c\
+		check_args.c\
 		ft_free_stack.c\
-		ft_putnbr_fd.c
 
 CHECKER_SRC =	checker_bonus.c \
 				apply_ops_bonus.c \

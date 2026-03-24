@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:46:26 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/19 14:54:27 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/24 13:06:30 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,4 @@ void	print_operation(t_operation *op)
 		write(1, "\n", 1);
 		op = op->next;
 	}
-}
-
-void	print_count_operation(t_operation *op)
-{
-	int	count;
-
-	count = 0;
-	while (op)
-	{
-		count++;
-		op = op->next;
-	}
-	ft_putnbr_fd(count, 1);
-	write(1, "\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 22:46:56 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/19 16:02:42 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/24 13:44:09 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static int	count_total(t_operation *op)
 	}
 	return (n);
 }
+
 void	print_bench(t_bench *bench)
 {
 	t_program	s;
