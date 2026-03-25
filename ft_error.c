@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:27:03 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/24 21:54:10 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/25 11:29:03 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void	print_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
-	exit(EXIT_FAILURE);
+	exit(1);
 }
 
 static int	is_valid_int(const char *str)
