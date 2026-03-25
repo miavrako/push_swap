@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:27:03 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/25 11:29:03 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/25 14:42:36 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	num_duplicate(t_stack *stack, int value)
 	return (1);
 }
 
-void	stack_a_valid(t_stack **stack_a, char **argv)
+int	stack_a_valid(t_stack **stack_a, char **argv)
 {
 	long	num;
 	int		i;
@@ -68,4 +68,5 @@ void	stack_a_valid(t_stack **stack_a, char **argv)
 		push_back(stack_a, (int)num);
 		i++;
 	}
+	return (1);
 }

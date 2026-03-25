@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/24 22:05:06 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/25 14:44:30 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void					count_operations(t_operation *ops, t_program *s);
 void					count_operations2(t_operation *ops, t_program *s);
 void					print_bench(t_bench *bench);
 int						bench_activated(int argc, char **argv);
-void					stack_a_valid(t_stack **stack_a, char **argv);
+int						stack_a_valid(t_stack **stack_a, char **argv);
 void					free_split(char **split);
 void					*ft_memset(void *s, int v, size_t n);
 void					ft_lstclear(t_operation **lst, void (*del)(void *));
