@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/25 14:46:23 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/30 15:08:28 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,8 @@ int	main(int argc, char **argv)
 	run.bench = bench_activated(argc, argv);
 	if (argc < 2)
 		return (0);
-	args = build_args(argc, argv, &run.from_split);
 	check_flags(argc, argv);
+	args = build_args(argc, argv, &run.from_split);
 	check_args(args);
 	stack_a_valid(&a, args);
 	if (run.from_split)
