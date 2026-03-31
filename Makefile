@@ -31,7 +31,8 @@ SRC =	push_swap.c \
 		check_args.c\
 		main_utils.c\
 		ft_free_stack.c\
-		check_flag.c
+		check_flag.c\
+		build_args_utils.c
 
 CHECKER_SRC =	checker_bonus.c \
 				apply_ops_bonus.c \
@@ -45,7 +46,9 @@ CHECKER_SRC =	checker_bonus.c \
 				stack_init.c\
 				ft_error.c\
 				ft_atol.c\
-				ft_free_stack.c
+				ft_free_stack.c\
+				args_bonus.c\
+				stack_bonus.c
 
 
 OBJ = $(SRC:.c=.o)

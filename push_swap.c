@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/31 09:19:41 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/31 13:16:07 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,10 @@ static char	**fill_args(int argc, char **argv)
 
 static char	**build_args(int argc, char **argv, int *from_split)
 {
+	char	*buf;
+	char	**res;
+	int		tot;
+
 	if (!count_nums(argc, argv))
 		return (NULL);
 	if (count_nums(argc, argv) == 1 && argc == 2)
@@ -58,7 +62,16 @@ static char	**build_args(int argc, char **argv, int *from_split)
 		*from_split = 1;
 		return (ft_split(argv[1], ' '));
 	}
-	return (fill_args(argc, argv));
+	if (!has_space_in_args(argc, argv))
+		return (fill_args(argc, argv));
+	tot = count_total_len(argc, argv);
+	buf = malloc(tot + 1);
+	if (!buf)
+		return (NULL);
+	res = ft_split(join_args(argc, argv, buf), ' ');
+	free(buf);
+	*from_split = 1;
+	return (res);
 }
 
 static void	run_sort(t_stack **a, t_stack **b, t_operation **op, t_run *run)

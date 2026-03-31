@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:04:22 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/31 09:24:29 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/31 13:33:39 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,11 @@ int						apply_swap(char *line, t_stack **a, t_stack **b);
 int						apply_rrotate(char *line, t_stack **a, t_stack **b);
 int						apply_rotate(char *line, t_stack **a, t_stack **b);
 void					free_split(char **split);
+char					**build_args_bonus(int argc, char **argv,
+							int *from_split);
+void					init_stacks_bonus(t_stack **a, t_stack **b,
+							char **args);
+void					cleanup_bonus(t_stack *a, t_stack *b, char **args,
+							int from_split);
 
 #endif

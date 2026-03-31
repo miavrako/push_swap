@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/31 09:25:54 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/03/31 13:15:45 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,5 +133,8 @@ void					init_run(t_stack **a, t_stack **b,
 void					free_args_run(char **args, int from_split);
 int						bench_activated(int argc, char **argv);
 void					free_split(char **split);
+int						has_space_in_args(int argc, char **argv);
+int						count_total_len(int argc, char **argv);
+char					*join_args(int argc, char **argv, char *buf);
 
 #endif

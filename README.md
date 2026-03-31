@@ -276,3 +276,4 @@ AI (Claude by Anthropic) was used during this project for the following tasks:
 - **Benchmarking design:** Helping design the structure of the `t_bench` struct and the logic for resolving strategy labels and complexity strings in `bench_utils.c`.
 - **README writing:** Drafting and iterating on this document, in particular the algorithm explanation and justification section.
 - **Code review:** Reviewing memory management across `ft_free_stack.c`, `ft_lstclear.c`, and the bonus checker to identify potential leaks.
+- **Norme** Helping to improve function length to respect the norme of 42.
