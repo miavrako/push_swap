@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:38:32 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 14:31:57 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/31 13:39:30 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,12 @@ void	algo_medium(t_stack **stack_a, t_stack **stack_b, t_operation **op)
 	if (!stack_a || !*stack_a || is_sorted(*stack_a))
 		return ;
 	size = stack_size(*stack_a);
+	if (size == 2)
+		return (sort_two(stack_a, stack_b, op));
+	if (size == 3)
+		return (sort_three(stack_a, stack_b, op));
+	if (size <= 5)
+		return (sort_five(stack_a, stack_b, op));
 	if (size <= 100)
 		chunk = 15;
 	else

@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 10:25:26 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/13 14:29:54 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/31 13:39:43 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,12 @@ void	algo_simple(t_stack **stack_a, t_stack **stack_b, t_operation **op)
 	size = stack_size(*stack_a);
 	if (!stack_a || !*stack_a || is_sorted(*stack_a))
 		return ;
+	if (size == 2)
+		return (sort_two(stack_a, stack_b, op));
+	if (size == 3)
+		return (sort_three(stack_a, stack_b, op));
+	if (size <= 5)
+		return (sort_five(stack_a, stack_b, op));
 	while (size > 3)
 	{
 		push_to_b(stack_a, stack_b, op);
