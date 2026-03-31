@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/25 14:44:30 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/31 09:25:54 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,8 +112,8 @@ void					set_complexity(t_bench *bench);
 void					count_operations(t_operation *ops, t_program *s);
 void					count_operations2(t_operation *ops, t_program *s);
 void					print_bench(t_bench *bench);
-int						bench_activated(int argc, char **argv);
-int						stack_a_valid(t_stack **stack_a, char **argv);
+int						stack_a_valid(t_stack **stack_a, char **argv,
+							int from_split);
 void					free_split(char **split);
 void					*ft_memset(void *s, int v, size_t n);
 void					ft_lstclear(t_operation **lst, void (*del)(void *));
@@ -128,5 +128,10 @@ void					free_stack(t_stack *stack);
 long					ft_atol(const char *str);
 void					check_args(char **args);
 void					check_flags(int argc, char **argv);
+void					init_run(t_stack **a, t_stack **b,
+							t_operation **op, t_run *run);
+void					free_args_run(char **args, int from_split);
+int						bench_activated(int argc, char **argv);
+void					free_split(char **split);
 
 #endif

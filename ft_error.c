@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:27:03 by miavrako          #+#    #+#             */
-/*   Updated: 2026/03/25 14:42:36 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/31 09:19:41 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,20 @@ void	print_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
 	exit(1);
+}
+
+static int	return_error(t_stack *stack, char **argv, int from_split)
+{
+	free_stack(stack);
+	if (argv)
+	{
+		if (from_split)
+			free_split(argv);
+		else
+			free(argv);
+	}
+	print_error();
+	return (0);
 }
 
 static int	is_valid_int(const char *str)
@@ -50,7 +64,7 @@ int	num_duplicate(t_stack *stack, int value)
 	return (1);
 }
 
-int	stack_a_valid(t_stack **stack_a, char **argv)
+int	stack_a_valid(t_stack **stack_a, char **argv, int from_split)
 {
 	long	num;
 	int		i;
@@ -59,12 +73,12 @@ int	stack_a_valid(t_stack **stack_a, char **argv)
 	while (argv[i])
 	{
 		if (!is_valid_int(argv[i]))
-			print_error();
+			return (return_error(*stack_a, argv, from_split));
 		num = ft_atol(argv[i]);
 		if (num < INT_MIN || num > INT_MAX)
-			print_error();
+			return (return_error(*stack_a, argv, from_split));
 		if (!num_duplicate(*stack_a, num))
-			print_error();
+			return (return_error(*stack_a, argv, from_split));
 		push_back(stack_a, (int)num);
 		i++;
 	}

@@ -29,6 +29,7 @@ SRC =	push_swap.c \
 		count_operations.c\
 		ft_atol.c\
 		check_args.c\
+		main_utils.c\
 		ft_free_stack.c\
 		check_flag.c
 
@@ -37,6 +38,7 @@ CHECKER_SRC =	checker_bonus.c \
 				apply_rotate_bonus.c \
 				stack_utils.c \
 				ft_utils.c\
+				ft_split.c\
 				ft_strcmp.c\
 				hide_ops_bonus.c\
 				read_apply_bonus.c\

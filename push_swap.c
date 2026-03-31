@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:01:09 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/30 15:08:28 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/03/31 09:19:41 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,8 @@ int	main(int argc, char **argv)
 	t_run		run;
 	char		**args;
 
-	a = NULL;
-	b = NULL;
-	op = NULL;
-	run.from_split = 0;
+	init_run(&a, &b, &op, &run);
+	args = NULL;
 	run.flag = get_algo_flag(argc, argv);
 	run.bench = bench_activated(argc, argv);
 	if (argc < 2)
@@ -92,11 +90,8 @@ int	main(int argc, char **argv)
 	check_flags(argc, argv);
 	args = build_args(argc, argv, &run.from_split);
 	check_args(args);
-	stack_a_valid(&a, args);
-	if (run.from_split)
-		free_split(args);
-	else
-		free(args);
+	stack_a_valid(&a, args, run.from_split);
+	free_args_run(args, run.from_split);
 	run_sort(&a, &b, &op, &run);
 	free_stack(a);
 	free_stack(b);
