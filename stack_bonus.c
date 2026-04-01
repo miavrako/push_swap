@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:30:49 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/31 13:31:53 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/04/01 07:53:51 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,13 @@ void	init_stacks_bonus(t_stack **a, t_stack **b, char **args)
 	*b = NULL;
 	i = 0;
 	while (args[i])
+	{
 		if (!process_arg_bonus(a, args[i++]))
-			return ;
+		{
+			write(2, "Error\n", 6);
+			exit(1);
+		}
+	}
 }
 
 void	cleanup_bonus(t_stack *a, t_stack *b, char **args, int from_split)

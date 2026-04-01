@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 13:58:15 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/13 00:19:41 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/04/01 07:50:59 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
