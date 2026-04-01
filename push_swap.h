@@ -6,7 +6,7 @@
 /*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 08:11:14 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/31 13:15:45 by mirarand         ###   ########.fr       */
+/*   Updated: 2026/04/01 12:55:11 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ char					**ft_split(char const *s, char c);
 int						ft_strcmp(const char *s1, const char *s2);
 void					add_operation(t_operation **lst, char *value);
 void					print_operation(t_operation *op);
-void					init_bench(t_bench *bench);
 void					set_complexity(t_bench *bench);
 void					count_operations(t_operation *ops, t_program *s);
 void					count_operations2(t_operation *ops, t_program *s);
