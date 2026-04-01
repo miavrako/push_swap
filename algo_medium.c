@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
+/*   By: mirarand <mirarand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:38:32 by mirarand          #+#    #+#             */
-/*   Updated: 2026/03/31 13:39:30 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/04/01 12:46:36 by mirarand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	ft_isqrt(int n)
+{
+	int	i;
+
+	if (n < 0)
+		return (-1);
+	i = 0;
+	while (i * i <= n)
+		i++;
+	return (i - 1);
+}
 
 static int	find_max_index(t_stack *stack)
 {
@@ -44,16 +56,20 @@ static void	push_max_to_a(t_stack **a, t_stack **b, t_operation **op)
 	pos = find_max_index(*b);
 	size = stack_size(*b);
 	if (pos <= size / 2)
+	{
 		while (pos--)
 			rb(b, op);
+	}
 	else
+	{
 		while (pos++ < size)
 			rrb(b, op);
+	}
 	pa(a, b, op);
 }
 
-static void	push_chunks_to_b(t_stack **stack_a, t_stack **stack_b, int chunk,
-		t_operation **op)
+static void	push_chunks_to_b(t_stack **stack_a, t_stack **stack_b,
+		int chunk, t_operation **op)
 {
 	int	pushed;
 
@@ -91,10 +107,9 @@ void	algo_medium(t_stack **stack_a, t_stack **stack_b, t_operation **op)
 		return (sort_three(stack_a, stack_b, op));
 	if (size <= 5)
 		return (sort_five(stack_a, stack_b, op));
-	if (size <= 100)
-		chunk = 15;
-	else
-		chunk = 30;
+	chunk = (ft_isqrt(size) * 3) / 2;
+	if (chunk < 10)
+		chunk = 10;
 	push_chunks_to_b(stack_a, stack_b, chunk, op);
 	while (*stack_b)
 		push_max_to_a(stack_a, stack_b, op);
